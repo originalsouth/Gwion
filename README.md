@@ -1,80 +1,44 @@
-=====
-Gwion
-=====
-- [ ] test
-gwion is a object-oriented programming language, aimed at making music
+---
+layout: homepage
+title: {{ site.name }}
+---
 
-It is strongly inspired by [chuck](http://chuck.stanford.edu/), and as chuck it is 'strongly timed'
-	based on [soundpipe](http://paulbatchelor.github.io/proj/soundpipe.html)
-	* plugin system
+<div id="home">
+<div id="header">
+  gwion is a object-oriented programming language, aimed at making music<br>
+</div>
+<b>strongly</b> inspired by <a href="http://chuck.stanford.edu/">chuck</a><br>
+synthesis is based on <a href="http://paulbatchelor.github.io/proj/soundpipe.html">soundpipe</a>
 
-primitive type:
-	int
-	float
-	complex
-
-new features:
-=============
-	* destructors
-	* 'sporking' of code segment
-	* overloadable operators
-	* function pointers
-	* enums
-	* Goto/Label
-	* Switch
-	* Doc
-	* variadic functions
-	* unamed global unions (in class and named unions to come)
-
-linux (ALSA) only for now
-
-Abstract Syntaxic Tree
-======================
-	* Stmt_List
-	* Class_Def
-	* Func_Def
-
-
-STaTeMenT
-=========
-	* Expression
-	* Code
-	* While
-	* Until
-	* Loop
-	* For
-	* If
-	* Break
-	* Continue
-	* Return
-	* Goto/Label
-	* Switch
-	* Case
-	* Enum
-	* Func_ptr
-
-Expression
-==========
-
-	* Postfix
-	* Primary
-		+ var
-		+ num
-		+ fnum
-		+ str
-		+ chr
-		+ array
-		+ Expression
-		+ Complex
-		+ Polar
-	* Decl
-	* Unary
-	* Binary
-	* Cast
-	* Func_call
-	* If
-	* Dot Member
-	* Dur
-	* Func_Ptr
-
-
+<blockquote><p>
+// create a sinusoidal generator and connect it to dac </br>
+SinOsc s => dac;<br>
+// let one minute pass<br>
+minute => now;<br>
+// you're done!<br>
+</p></blockquote>
+  <h1>Features</h1>
+  <ul class="posts">
+    {% for post in site.pages %}
+      {% if post.categories == "features" %}
+        <li><span><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <h1>Examples</h1>
+  <ul class="posts">
+    {% for post in site.pages %}
+      {% if post.categories == "examples" %}
+        <li><span><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <h1>Plugins</h1>
+  <ul class="posts">
+    {% for post in site.pages %}
+      {% if post.categories == "plugins" %}
+        <li><span><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
