@@ -5,5 +5,5 @@ bundle exec jekyll b
 cd _site
 git add -A
 git commit -am 'Yeah. Built from subdir'
-git push .
+git push
 cd ..
