@@ -1,1 +1,2 @@
-redirect to [Gwion](http://fennecdjay.github.io/Gwion)'s Site
+this is the branch where site is built.  
+export it with 'sh mk_site.sh' 
