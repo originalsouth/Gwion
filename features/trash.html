@@ -21,33 +21,18 @@
 
     <section class="main-content">
       
-      <p>Gwion features unamed union.<br />
-declared object are refs</p>
+      def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
 
-<p>at global scope:</p>
-<blockquote>
-  <p>union 
-{
-	int     i;
-	float   f;
-	complex c;
-	Object  o;
-};</p>
-</blockquote>
-
-<p>same at class scope:</p>
-<blockquote>
-  <p>class C
-	{
-		union 
-	{
-		int     i;
-		float   f;
-		complex c;
-		Object  o;
-	};
-	}</p>
-</blockquote>
+You can declare a template function:
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">template</span><span class="o">&lt;</span><span class="p">{</span><span class="n">your</span> <span class="n">typenames</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="n">function</span> <span class="n">ret_type</span> <span class="n">function_names</span><span class="p">(</span><span class="n">argumens</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">// your code here
+</span><span class="p">}</span>	</code></pre></figure>
 
 
       <footer class="site-footer">

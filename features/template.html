@@ -6,9 +6,9 @@
   <title>Gwion</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#157878">
-  <link rel="stylesheet" href="https://fennecdjay.github.io/Gwion//css/normalize.css">
+  <link rel="stylesheet" href="/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fennecdjay.github.io/Gwion//css/gwion.css">
+  <link rel="stylesheet" href="/css/gwion.css">
 </head>
 
 
@@ -21,17 +21,20 @@
 
     <section class="main-content">
       
-      You can declare a template function:
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
-2
-3
-4
-5</pre></td><td class="code"><pre><span class="n">template</span><span class="o">&lt;</span><span class="p">{</span><span class="n">your</span> <span class="n">typenames</span><span class="p">}</span><span class="o">&gt;</span>
+      <p>You can declare a template function:</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">template</span><span class="o">&lt;</span><span class="p">{</span><span class="n">your</span> <span class="n">typenames</span><span class="p">}</span><span class="o">&gt;</span>
 <span class="n">function</span> <span class="n">ret_type</span> <span class="n">function_names</span><span class="p">(</span><span class="n">argumens</span><span class="p">)</span>
 <span class="p">{</span>
 	<span class="c1">// your code here
-</span><span class="p">}</span>	<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+</span><span class="p">}</span>	
+</code></pre>
+</div>
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="k">function</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="s2">"notice the blank line before this function?"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 
       <footer class="site-footer">
