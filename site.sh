@@ -15,6 +15,9 @@ function post()
 
 function deploy()
 {
+	git add .
+	git commit -am 'Yeah. Built from subdir'
+	git push
 	# first  build the site
 #	sed -i '/base/s/^/#/g' _config.yml #uncomment
 	bundle exec jekyll b
@@ -28,7 +31,7 @@ function deploy()
 	git commit -am 'Yeah. Built from subdir'
 	git push
 	git checkout site
-	rm -rf _site
+#	rm -rf _site
 #	git add .
 #	git commit -am 'Yeah. built by script'
 #	git push
