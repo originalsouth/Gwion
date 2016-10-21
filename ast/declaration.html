@@ -100,9 +100,36 @@
 <div>
 <p>
 <br>
-      this is just a test .
-for automatic generation.
-made with site.sh
+      <h1>Declaration</h1>
+<p>Declaration are very simple:</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="n">your</span> <span class="n">type</span><span class="o">&gt;</span> <span class="n">var1</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="n">your</span> <span class="n">type2</span><span class="o">&gt;</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>a variable can be declared as ref: it won’t be initialized,
+but it can be used to store refence to object of the same type.
+a primitive can’t be declared as ref.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">Object</span> <span class="n">o</span><span class="p">;</span>
+<span class="n">Object</span> <span class="err">@</span><span class="n">ref</span><span class="p">;</span>
+<span class="c1">// store reference to o in ref;
+</span><span class="n">o</span> <span class="err">@</span><span class="o">=&gt;</span> <span class="n">ref</span><span class="p">;</span>
+<span class="c1">// print both objects
+</span><span class="o">&lt;&lt;&lt;</span><span class="n">o</span><span class="p">,</span> <span class="n">ref</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>you can also declare <strong>Arrays</strong>:</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="c1">// a array 3 int
+</span><span class="kt">int</span> <span class="n">i</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<span class="c1">// empty [] make ref;
+</span><span class="n">Object</span> <span class="n">array</span><span class="p">[];</span>
+<span class="c1">// is similar to
+</span><span class="n">Object</span> <span class="err">@</span><span class="n">array2</span><span class="p">[];</span>
+<span class="c1">// array can be multi-dimensionnal
+</span><span class="kt">float</span> <span class="n">array3d</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="mi">4</span><span class="p">][</span><span class="mi">5</span><span class="p">];</span>
+</code></pre>
+</div>
 
 </p>
 </div>
