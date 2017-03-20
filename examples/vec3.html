@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  
   <head>
   <meta charset="UTF-8">
   <title>Gwion</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#157878">
-  <link rel="stylesheet" href="https://fennecdjay.github.io/Gwion/css/normalize.css">
+  <link rel="stylesheet" href="/css/normalize.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://fennecdjay.github.io/Gwion/css/gwion.css">
-	<link href="https://fennecdjay.github.io/Gwion/css/syntax.css" rel="stylesheet">
-	<link rel="shortcut icon" type="image/png" href="https://fennecdjay.github.io/Gwion/favicon.png"/>
+  <link rel="stylesheet" href="/css/gwion.css">
+	<link href="/css/syntax.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 </head>
 
   <body>
@@ -18,6 +19,8 @@
   <h2 class="project-tagline">A strongly timed musical programming language</h2>
 </section>
 
+
+    <section class="main-content">
     <!-- Belongs at: /_includes/navigation.html -->
 
 <!-- This finds the current page so it can be highlighted. -->
@@ -26,8 +29,7 @@
 
 
     
-
-
+        
     
 
 
@@ -37,12 +39,17 @@
     
 
 
+    
+
+
+    
+        
     
 
 
 <!-- Then we build the nav bar. -->
 <nav>
-  <img src="https://fennecdjay.github.io/Gwion/favicon.png"/>
+  <img src="/favicon.png"/>
     <ul>
     
         
@@ -51,7 +58,7 @@
         
         
         
-        <li><a href="https://fennecdjay.github.io/Gwion/">Gwion</a></li>
+        <li><a href="/">Gwion</a></li>
         
     
         
@@ -60,7 +67,7 @@
         
         
         
-        <li><a href="https://fennecdjay.github.io/Gwion/ast">AST</a></li>
+        <li><a href="/ast">AST</a></li>
         
     
         
@@ -69,7 +76,7 @@
         
         
         
-        <li><a href="https://fennecdjay.github.io/Gwion/plugins">Plugins</a></li>
+        <li><a href="/plugins">Plugins</a></li>
         
     
         
@@ -78,46 +85,62 @@
         
         
         
-        <li><a href="https://fennecdjay.github.io/Gwion/features">Features</a></li>
+        <li><a href="/features">Features</a></li>
         
     
         
-            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
             
         
         
         
-        <li><a href="https://fennecdjay.github.io/Gwion/examples">Examples</a></li>
+        <li class="current"><a href="/examples">Examples</a></li>
         
     
     </ul>
 </nav>
 
-    <section class="main-content">
-      <br>this page documents <b>vec3.gw</b><br><p>
-<div class="highlight"><pre><span class="c1">//&lt;&lt;&lt;@(2, 1, 1).z&gt;&gt;&gt;;</span>
-<span class="n">Vec3</span> <span class="n">v</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="mf">12.</span> <span class="o">=&gt;</span> <span class="n">v</span><span class="p">.</span><span class="n">z</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="c1">//&lt;&lt;&lt;v.z&gt;&gt;&gt;;</span>
-<span class="cm">/*</span>
-<span class="cm">&lt;&lt;&lt;v&gt;&gt;&gt;;</span>
-<span class="cm">&lt;&lt;&lt;v&gt;&gt;&gt;;</span>
-<span class="cm">&lt;&lt;&lt;v.z&gt;&gt;&gt;;</span>
-<span class="cm">//v + w;</span>
-<span class="cm">//v *2.;</span>
-<span class="cm">&lt;&lt;&lt;v.z&gt;&gt;&gt;;</span>
-<span class="cm">v.setAll(2);</span>
-<span class="cm">&lt;&lt;&lt;v.magnitude()&gt;&gt;&gt;;</span>
-<span class="cm">&lt;&lt;&lt;v.z&gt;&gt;&gt;;</span>
-<span class="cm">*/</span>
+      <br>this page documents 
+<b>vec3.gw</b><br><p>
+<div class="highlight"><pre><span></span><span class="n">Vec3</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">;</span>
+
+<span class="o">&lt;&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">z</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="mi">1</span> <span class="o">=&gt;</span> <span class="n">v</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="mi">2</span> <span class="o">=&gt;</span> <span class="n">v</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="o">-</span><span class="mi">12</span> <span class="o">=&gt;</span> <span class="n">v</span><span class="p">.</span><span class="n">z</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;set&quot;</span><span class="p">,</span>       <span class="n">v</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>  
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;setAll&quot;</span><span class="p">,</span>    <span class="n">v</span><span class="p">.</span><span class="n">setAll</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;should be 1.2 1.2 1.2&quot;</span><span class="p">,</span> <span class="n">v</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;Update&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;Update&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">.1</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;Update&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">supdate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;Update&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">supdate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mf">.1</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;magnitude&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">magnitude</span><span class="p">()</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;normalize&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">.</span><span class="n">normalize</span><span class="p">()</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;interp&quot;</span><span class="p">,</span>    <span class="n">v</span><span class="p">.</span><span class="n">interp</span><span class="p">()</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;interp&quot;</span><span class="p">,</span>    <span class="n">v</span><span class="p">.</span><span class="n">interp</span><span class="p">(</span><span class="mf">2.3</span><span class="p">)</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+<span class="o">&lt;&lt;&lt;</span> <span class="s">&quot;interp&quot;</span><span class="p">,</span>    <span class="n">v</span><span class="p">.</span><span class="n">interp</span><span class="p">(</span><span class="mf">2.3</span><span class="o">::</span><span class="n">samp</span><span class="p">)</span> <span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
+
+<span class="n">w</span><span class="p">.</span><span class="n">setAll</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">v</span><span class="o">+</span><span class="n">w</span><span class="p">;</span>
+<span class="n">v</span><span class="o">-</span><span class="n">w</span><span class="p">;</span>
+<span class="n">v</span><span class="o">*</span><span class="n">w</span><span class="p">;</span>
+<span class="n">v</span><span class="o">/</span><span class="mf">.1</span><span class="p">;</span>
+<span class="mf">10.</span><span class="o">*</span><span class="n">w</span><span class="p">;</span>
+<span class="n">w</span><span class="o">*</span><span class="mf">10.</span><span class="p">;</span>
 </pre></div>
 </p>
+
 
     </section>
       <footer class="site-footer">
   <span class="site-footer-owner"><a href="">Gwion</a> is maintained by <a href="https://fennecdjay.github.io/Gwion/">Jérémie Astor</a>.</span>
   <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
 </footer>
+
+
 
   </body>
 </html>

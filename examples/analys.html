@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  
+  <head>
+  <meta charset="UTF-8">
+  <title>Gwion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/gwion.css">
+	<link href="/css/syntax.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+</head>
+
+  <body>
+    <section class="page-header">
+  <h1 class="project-name">Gwion</h1>
+  <h2 class="project-tagline">A strongly timed musical programming language</h2>
+</section>
+
+
+    <section class="main-content">
+    <!-- Belongs at: /_includes/navigation.html -->
+
+<!-- This finds the current page so it can be highlighted. -->
+
+
+
+
+    
+        
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+    
+        
+    
+
+
+<!-- Then we build the nav bar. -->
+<nav>
+  <img src="/favicon.png"/>
+    <ul>
+    
+        
+            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
+            
+        
+        
+        
+        <li><a href="/">Gwion</a></li>
+        
+    
+        
+            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
+            
+        
+        
+        
+        <li><a href="/ast">AST</a></li>
+        
+    
+        
+            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
+            
+        
+        
+        
+        <li><a href="/plugins">Plugins</a></li>
+        
+    
+        
+            <!-- We have to declare it 'null' to ensure it doesn't propagate. -->
+            
+        
+        
+        
+        <li><a href="/features">Features</a></li>
+        
+    
+        
+            
+        
+        
+        
+        <li class="current"><a href="/examples">Examples</a></li>
+        
+    
+    </ul>
+</nav>
+
+      <br>this page documents 
+<b>analys.gw</b><br><p>
+<div class="highlight"><pre><span></span><span class="n">FFT</span> <span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">dac</span><span class="p">;</span>
+<span class="k">second</span> <span class="o">=&gt;</span> <span class="k">now</span><span class="p">;</span>
+<span class="mi">1024</span> <span class="o">=&gt;</span> <span class="n">fft</span><span class="p">.</span><span class="n">init</span><span class="p">;</span>
+<span class="k">second</span> <span class="o">=&gt;</span> <span class="k">now</span><span class="p">;</span>
+<span class="n">fft</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+
+<span class="n">ANA</span> <span class="n">ana</span><span class="p">;</span>
+
+<span class="n">ana</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">ana</span><span class="p">.</span><span class="n">fft</span><span class="p">();</span>
+<span class="n">ana</span><span class="p">.</span><span class="n">fft</span><span class="p">(</span><span class="n">fft</span><span class="p">);</span>
+
+<span class="n">Centroid</span> <span class="n">centroid</span><span class="p">;</span>
+<span class="n">Spread</span> <span class="n">spread</span><span class="p">;</span>
+<span class="n">Skewness</span> <span class="n">skewness</span><span class="p">;</span>
+<span class="n">Kurtosis</span> <span class="n">kurtosis</span><span class="p">;</span>
+<span class="n">RMS</span> <span class="n">rms</span><span class="p">;</span>
+<span class="n">Rolloff</span> <span class="n">rolloff</span><span class="p">;</span>
+<span class="n">Freq</span> <span class="n">freq</span><span class="p">;</span>
+<span class="n">ASC</span> <span class="n">asc</span><span class="p">;</span>
+<span class="n">ASS</span> <span class="n">ass</span><span class="p">;</span>
+
+<span class="n">FC</span> <span class="n">fc</span><span class="p">;</span>
+<span class="n">fc</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">fc</span><span class="p">.</span><span class="n">rem</span><span class="p">(</span><span class="n">rms</span><span class="p">);</span>
+<span class="n">fc</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">rms</span><span class="p">);</span>
+<span class="n">fc</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">fc</span><span class="p">.</span><span class="n">rem</span><span class="p">(</span><span class="n">rms</span><span class="p">);</span>
+
+<span class="n">centroid</span> <span class="o">=&gt;</span> <span class="n">fc</span><span class="p">;</span>
+<span class="n">centroid</span> <span class="o">=&lt;</span> <span class="n">fc</span><span class="p">;</span>
+
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">centroid</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">spread</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">skewness</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">kurtosis</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">rms</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">rolloff</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">freq</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">asc</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+<span class="n">fft</span> <span class="o">=&gt;</span> <span class="n">ass</span><span class="p">.</span><span class="n">fft</span><span class="p">;</span>
+
+
+<span class="n">centroid</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">spread</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">skewness</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">kurtosis</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">rms</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">rolloff</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">freq</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">asc</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+<span class="n">ass</span><span class="p">.</span><span class="n">compute</span><span class="p">();</span>
+</pre></div>
+</p>
+
+
+    </section>
+      <footer class="site-footer">
+  <span class="site-footer-owner"><a href="">Gwion</a> is maintained by <a href="https://fennecdjay.github.io/Gwion/">Jérémie Astor</a>.</span>
+  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+</footer>
+
+
+
+  </body>
+</html>
