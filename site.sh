@@ -22,7 +22,6 @@ function deploy()
 	mv _site /tmp
 	rm .jekyll-metadata
 	git checkout gh-pages || { echo "error: gh-pages checkout"; return; }
-	git rm -rf *
 	rm -rf *
 	mv /tmp/_site/* .
 	git commit -am 'Yeah. Built from subdir'
