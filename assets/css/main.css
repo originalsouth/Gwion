@@ -4228,3 +4228,12 @@ header .entry-meta {
   border-style: solid !important;
   border-color: #a2a2a2;
   border-radius: 3px; }
+
+.highlight {
+  background: rgba(20, 20, 20, 60);
+}
+
+pre {
+  padding: 5px;
+  margin: 5px;
+}
