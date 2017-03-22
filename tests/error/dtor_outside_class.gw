@@ -1,2 +1,0 @@
-// [contains] dtor must be in class def!!
- dtor () {}

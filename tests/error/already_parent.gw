@@ -1,3 +1,0 @@
-// [contains] has already been defined in parent class
- class C            { int i; }
-class CC extends C { int i; }

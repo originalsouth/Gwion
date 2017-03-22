@@ -1,3 +1,0 @@
-// [contains] not match found for operator
- Object o;
-NULL +=> o;

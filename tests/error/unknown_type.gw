@@ -1,3 +1,0 @@
-// [contains] unknown in declaration
- // hit the error with an unknown type
-unknown_type variable;

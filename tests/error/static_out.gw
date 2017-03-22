@@ -1,2 +1,0 @@
-// [contains] static variables must be declared at class scope
- static int i;

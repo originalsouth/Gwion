@@ -1,4 +1,0 @@
-// [contains] trying to call empty func pointer
-typedef void (Test)()
-Test test;
-test();

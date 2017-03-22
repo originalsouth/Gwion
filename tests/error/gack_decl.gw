@@ -1,2 +1,0 @@
-// [contains] cannot use <<< >>> on variable declarations
- <<< int i >>>;
