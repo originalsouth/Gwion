@@ -18,7 +18,7 @@ function deploy()
 #	git add .
 #	git commit -am 'Pre-deploy commit :smile:'
 #	git push
-	bundle exec jekyll bulid --base-url $(git remote get-url origin)
+	bundle exec jekyll build --base-url $(git remote get-url origin)
 	mv _site /tmp
 	rm .jekyll-metadata
 	git checkout gh-pages || { echo "error: gh-pages checkout"; return; }
