@@ -15,20 +15,19 @@ function post()
 
 function deploy()
 {
-	git add .
-	git commit -am 'Pre-deploy commit :smile:'
-	git push
+#	git add .
+#	git commit -am 'Pre-deploy commit :smile:'
+#	git push
 	bundle exec jekyll b
 	mv _site /tmp
-	git checkout gh-pages
+	rm .jekyll-metadata
+	git checkout gh-pages || { echo "error: gh-pages checkout"; return; }
 	git rm -rf *
 	rm -rf *
 	mv /tmp/_site/* .
-	git add .
 	git commit -am 'Yeah. Built from subdir'
 	git push
-#	rm .jekyll-metadata
-#	git checkout site
+	git checkout site || { echo "error: site checkout"; return; }
 }
 
 on_int()
