@@ -50,25 +50,16 @@
 				<li><a href="{{ site.baseurl }}/tags/">All Tags</a></li>
 			</ul>
 		</li>
-<!-- hack -->
-		<li>
-			<a href="#">Ast</a>
-			<ul class="dl-submenu">
-				<li><a href="{{ site.baseurl }}/ast/">Ast</a></li>
-				<li><a href="{{ site.baseurl }}/tags/">All Tags</a></li>
-			</ul>
-		</li>
-<!-- /hack -->
 		{% for link in site.data.navigation %}
 	    {% if link.url contains 'http' %}
 	        {% assign domain = '' %}
 	        {% else %}
 	        {% assign domain = site.baseurl %}
 	    {% endif %}
-<!--	    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif 
-%}>{{ link.title }}</a></li> -->
+<li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+<!--
 	    <li><a href="{{ site.baseurl }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif 
-%}>{{ link.title }}</a></li>
+%}>{{ link.title }}</a></li> -->
 	  {% endfor %}
 	</ul><!-- /.dl-menu -->
 </nav><!-- /.dl-menuwrapper -->

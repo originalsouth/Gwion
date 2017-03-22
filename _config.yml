@@ -1,5 +1,6 @@
 title:        Gwion
 tagline:      A strongly timed musical programming language
+description:  A strongly timed musical programming language
 paginate:     1
 author:
   name:       Jérémie Astor
@@ -20,3 +21,5 @@ gist:
 #highlighter: rouge
 
 exclude: [Gemfile, Gemfile.lock, site.sh, .gitignore, README.md]
+
+background: stone_background.jpg

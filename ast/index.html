@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Ast
+target: ast
 ---
 
 {% for post in site.pages %}
-	{% if post.categories contains 'ast' %}
+	{% if post.categories contains page.target %}
       <h1 class="entry-title"><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title}}</a></h1>
 	{% endif %}
 {% endfor %}

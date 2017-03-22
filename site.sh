@@ -62,10 +62,8 @@ function examples()
 	mkdir examples
 	for ex in $(ls Gwion-examples/*.gw)
 	do
-		NAME=$(basename $ex .gw)
-#		echo -e "---\nlayout: example\ntitle: example $NAME\ncategories: examples \n---\n<br>this page documents <b>$NAME.gw</b><br><p>" > examples/$NAME.html
-		echo -e "---\nlayout: homepage\ntitle: example $NAME\ncategories: examples \n---\n<br>this page documents 
-<b>$NAME.gw</b><br><p>" > examples/$NAME.html
+		NAME=$(basename ${ex/.gw//})
+		echo -e "---\nlayout: default\ntitle: example $NAME\ncategories: [examples]\n---\n<br>this page documents <b>$NAME.gw</b><br><p>" > examples/$NAME.html
 		pygmentize -f html $ex >> examples/$NAME.html
 	echo "</p>" >> examples/$NAME.html
 	done
