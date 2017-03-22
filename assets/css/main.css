@@ -4133,7 +4133,8 @@ header .entry-meta {
       margin-left: auto;
       margin-right: auto; } }
 #post-index article {
-  background-color: #fff;
+  background: url(../../images/white_marble.jpg);
+/*  background-color: #fff; */
   box-shadow: 0 0 0 0, 0 6px 12px rgba(34, 34, 34, 0.1);
   border-radius: 3px;
   margin-bottom: 20px;

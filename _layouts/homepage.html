@@ -8,7 +8,6 @@
 </head>
 
 <body id="post-index" {% if page.image.feature %}class="feature"{% endif %}>
-
 {% include browser-upgrade.html %}
 {% include navigation.html %}
 
@@ -22,13 +21,14 @@
   <div class="header-title">
     <div class="header-title-wrap">
       <h1>{{ site.title }}</h1>
+      <h4>{{ site.tagline }}</h4>
       <h2>{{ page.title }}</h2>
     </div><!-- /.header-title-wrap -->
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
 
 <div id="main" role="main">
-  {{ content }}
+{{ content }}
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
@@ -38,6 +38,7 @@
 </div><!-- /.footer-wrapper -->
 
 {% include scripts.html %}          
+
 
 </body>
 </html>
