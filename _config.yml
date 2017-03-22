@@ -23,3 +23,9 @@ gist:
 exclude: [Gemfile, Gemfile.lock, site.sh, .gitignore, README.md]
 
 background: stone_background.jpg
+
+owner:
+  name:       Jérémie Astor
+  email: astor.jeremie@wanadoo.fr*
+  avatar: avatar.jpg
+  bio: "musician"
