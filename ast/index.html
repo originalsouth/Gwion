@@ -5,6 +5,6 @@ title: Ast
 
 {% for post in site.pages %}
 	{% if post.categories contains 'ast' %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title}}</a></h1>
+      <h1 class="entry-title"><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title}}</a></h1>
 	{% endif %}
 {% endfor %}
