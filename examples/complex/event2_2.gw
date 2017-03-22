@@ -1,3 +1,0 @@
-second => now;
-TestEvent.e.broadcast();
-second => now;

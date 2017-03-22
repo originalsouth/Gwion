@@ -1,3 +1,0 @@
-Event e;
-spork ~ { second => now; e.broadcast(); };
-e => now;

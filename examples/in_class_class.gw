@@ -1,7 +1,0 @@
-class C
-{
-	template<{a}>
-	function void test(a var){ <<<var>>>; }
-	class D { int i;}
-}	
-C c;
