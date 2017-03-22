@@ -27,8 +27,8 @@ function deploy()
 	git add .
 	git commit -am 'Yeah. Built from subdir'
 	git push
-	rm .jekyll-metadata
-	git checkout site
+#	rm .jekyll-metadata
+#	git checkout site
 }
 
 on_int()
