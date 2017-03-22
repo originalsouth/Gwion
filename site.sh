@@ -75,7 +75,7 @@ function examples()
 	for ex in $(ls Gwion-examples/*.gw)
 	do
 		NAME=$(basename ${ex/.gw//})
-		echo -e "---\nlayout: default\ntitle: example $NAME\ncategories: [examples]\n---\n<br>this page documents <b>$NAME.gw</b><br><p>" > examples/$NAME.html
+		echo -e "---\nlayout: default\ntitle: example $NAME\ncategories: [examples]\nimage:\n  feature: abstract-1.jpg\n#  credit:\n#  creditlink:\\n---\n<br>this page documents <b>$NAME.gw</b><br><p>" > examples/$NAME.html
 		pygmentize -f html $ex >> examples/$NAME.html
 	echo "</p>" >> examples/$NAME.html
 	done

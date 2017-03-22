@@ -1,4 +1,0 @@
-spork ~{ 2::second => now; };
-<<<"start">>>;
-second => now;
-<<<"end">>>;

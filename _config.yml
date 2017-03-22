@@ -11,7 +11,9 @@ github: [metadata]
 gems:
   - jekyll-gist
   - jekyll-paginate
-gem: 'github-pages'
+gem:
+  - github-pages
+
 markdown: kramdown
 incremental: true
 
@@ -32,3 +34,5 @@ owner:
 
 image:
   feature: abstract-1.jpg
+
+url: http://example.com

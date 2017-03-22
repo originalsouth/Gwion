@@ -1,7 +1,0 @@
-class C
-{
-  int i;
-  Object o;
-}
-
-C c;
