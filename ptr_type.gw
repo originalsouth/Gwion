@@ -1,3 +1,0 @@
-typedef void (Test)();
-function void test(){};
-test @=> Test;
