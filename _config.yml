@@ -22,4 +22,5 @@ gist:
 exclude: [Gemfile, Gemfile.lock, site.sh, .gitignore, README.md, .help.zsh]
 
 baseurl: https://fennecdjay.github.io/Gwion
-#url: https://fennecdjay.github.io/Gwion
+base-url: https://fennecdjay.github.io/Gwion
+url: https://fennecdjay.github.io/Gwion

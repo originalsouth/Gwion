@@ -1,14 +1,8 @@
 - title: AST
   url: /ast
-
 - title: Plugins
-  url: /plugins
-  sublinks:
-    - title: Sections
-      url: /Plugin/*
-
+  url: /plugin
 - title: Features
   url: /features
-
 - title: Examples
   url: /examples
