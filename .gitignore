@@ -1,1 +1,7 @@
-_site
+*.o
+gwion
+include/generated.h
+util/generate_header
+util/coverity_scan.sh
+ugen/soundpipe.c
+Makefile

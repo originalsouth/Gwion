@@ -55,6 +55,17 @@ function send_gist()
 	echo $(gist -u $1 -f $2| sed "s/https:\/\/gist.github.com\///") >> known_gist
 }
 
+function doc()
+{
+#	mkdir Gwion
+	rm -rf doc
+	for dir in core eval drvr lang include
+	do  git checkout master -- "$a"
+	done
+#	doxygen
+#	rm -rf Gwion
+}
+
 function examples()
 {
 	rm -rf examples Gwion-examples
@@ -107,6 +118,9 @@ then
 elif [ "${1}" = 'gist' ]
 then
 	send_gist $2 $3
+elif [ "${1}" = 'doc' ]
+then
+	doc
 elif [ "${1}" = 'deploy' ]
 then
 	deploy
