@@ -1,5 +1,0 @@
-// [contains] invalid cast
-class C {}
-class D {}
-D d;
-d $ C;

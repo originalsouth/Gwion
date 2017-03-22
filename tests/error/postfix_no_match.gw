@@ -1,3 +1,0 @@
-// [contains] no suitable resolutation for postfix operator
- Object o;
-o++;

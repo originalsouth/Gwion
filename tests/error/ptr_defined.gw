@@ -1,3 +1,0 @@
-// [contains] has already been defined in the same scope
-int i;
-typedef void (i)(){}
