@@ -1,3 +1,0 @@
-// [contains] is already used by another value
- int i;
-function void i(){}

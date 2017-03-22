@@ -1,3 +1,0 @@
-// [contains] cannot extend incomplete type
- class C extends UnknownParentClass {}
-class UnknownParentClass {}

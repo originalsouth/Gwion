@@ -1,6 +1,0 @@
-// [contains] already declared as variable
- int i;
-enum
-{
-  test
-} i;
