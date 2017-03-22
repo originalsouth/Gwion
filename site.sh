@@ -18,12 +18,13 @@ function deploy()
 #	git add .
 #	git commit -am 'Pre-deploy commit :smile:'
 #	git push
-	bundle exec jekyll build --baseurl $(git remote get-url origin)
+	bundle exec jekyll build --baseurl https://fennecdjay.github.io/Gwion
 	mv _site /tmp
 	rm .jekyll-metadata
 	git checkout gh-pages || { echo "error: gh-pages checkout"; return; }
 	rm -rf *
 	mv /tmp/_site/* .
+	git add .
 	git commit -am 'Yeah. Built from subdir'
 	git push
 	git checkout site || { echo "error: site checkout"; return; }
