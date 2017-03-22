@@ -18,7 +18,7 @@ target: section
 
 {% for post in site.pages %}
     {% if post.categories contains page.target %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{post.title }}" itemprop="url">{{ post.title}}</a></h1>
+<a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{post.title }}" itemprop="url">{{ post.title}}</a>
     {% endif %}
 {% endfor %}
 
