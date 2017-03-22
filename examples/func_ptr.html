@@ -1,9 +1,12 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  
-  <meta charset="utf-8">
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
 <title>example func_ptr &#8211; Gwion</title>
-<meta name="description" content="">
+<meta name="description" content="A strongly timed musical programming language">
 
 
 
@@ -12,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="example func_ptr">
-<meta property="og:description" content="">
+<meta property="og:description" content="A strongly timed musical programming language">
 <meta property="og:url" content="/examples/func_ptr.html">
 <meta property="og:site_name" content="Gwion">
 
@@ -52,30 +55,24 @@
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
 
-<!-- hack -->
-<a href="https://github.comfennecdjay/Gwion"><img style="position: absolute; top: 0; right: 0; border: 0;"
-src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
+
+
+
+<style type="text/css">body {background-image:url(/images/stone_background.jpg);}</style>
+
+<!-- hack --> 
+<a href="https://github.com/fennecdjay/Gwion"><img style="position: absolute; top: 0; right: 0; border: 0;" 
+src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" 
 alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
-
-
-<!-- from https://buttons.github.io/ -->
-<!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- /from https://buttons.github.io/ -->
-
 <!-- /hack -->
 
+</head>
 
-  <body>
-    <section class="page-header">
-<!--  <h1 class="project-name">Gwion</h1> -->
-  <h1 class="project-name">Gwion</h1>
-  <h2 class="project-tagline">A strongly timed musical programming language</h2>
-</section>
+<body id="post-index" >
 
-
-    <section class="main-content">
-    <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
 	<button class="dl-trigger">Open Menu</button>
 	<ul class="dl-menu">
 		<li><a href="/">Home</a></li>
@@ -107,36 +104,46 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 				<li><a href="/tags/">All Tags</a></li>
 			</ul>
 		</li>
-<!-- hack -->
-		<li>
-			<a href="#">Ast</a>
-			<ul class="dl-submenu">
-				<li><a href="/ast/">Ast</a></li>
-				<li><a href="/tags/">All Tags</a></li>
-			</ul>
-		</li>
-<!-- /hack -->
 		
 	    
-	    <li><a href="/" >Gwion</a></li>
+<li><a href="/ast" >AST</a></li>
+<!--
+	    <li><a href="/ast" >AST</a></li> -->
 	  
 	    
-	    <li><a href="/ast" >AST</a></li>
+<li><a href="/plugins" >Plugins</a></li>
+<!--
+	    <li><a href="/plugins" >Plugins</a></li> -->
 	  
 	    
-	    <li><a href="/plugins" >Plugins</a></li>
+<li><a href="/features" >Features</a></li>
+<!--
+	    <li><a href="/features" >Features</a></li> -->
 	  
 	    
-	    <li><a href="/features" >Features</a></li>
-	  
-	    
-	    <li><a href="/examples" >Examples</a></li>
+<li><a href="/examples" >Examples</a></li>
+<!--
+	    <li><a href="/examples" >Examples</a></li> -->
 	  
 	</ul><!-- /.dl-menu -->
 </nav><!-- /.dl-menuwrapper -->
 
-      <br>this page documents 
-<b>func_ptr.gw</b><br><p>
+
+<div class="entry-header">
+  
+  
+  <div class="header-title">
+    <div class="header-title-wrap">
+      <h1>Gwion</h1>
+      <h4>A strongly timed musical programming language</h4>
+      <h2>example func_ptr</h2>
+    </div><!-- /.header-title-wrap -->
+  </div><!-- /.header-title -->
+</div><!-- /.entry-header -->
+
+<div id="main" role="main">
+<article class="hentry">
+  <br>this page documents <b>func_ptr.gw</b><br><p>
 <div class="highlight"><pre><span></span><span class="c1">// define a function pointer type</span>
 <span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="n">Test</span><span class="p">)()</span>
 
@@ -164,14 +171,31 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 </pre></div>
 </p>
 
+</article>
+</div><!-- /#main -->
 
-    </section>
-      <footer class="site-footer">
-  <span class="site-footer-owner"><a href="">Gwion</a> is maintained by <a href="https://fennecdjay.github.io/Gwion/">Jérémie Astor</a>.</span>
-  <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
-</footer>
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay" data-style="mega" data-count-href="/fennecdjay/followers" data-count-api="/users/fennecdjay#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @fennecdjay on GitHub">Follow @fennecdjay</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion/subscription" data-icon="octicon-eye" data-style="mega" data-count-href="/fennecdjay/Gwion/watchers" data-count-api="/repos/fennecdjay/Gwion#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch fennecdjay/Gwion on GitHub">Watch</a><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion" data-icon="octicon-star" data-style="mega" data-count-href="/fennecdjay/Gwion/stargazers" data-count-api="/repos/fennecdjay/Gwion#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star fennecdjay/Gwion on GitHub">Star</a><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/fennecdjay/Gwion#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue fennecdjay/Gwion on GitHub">Issue</a><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download fennecdjay/Gwion on GitHub">Download</a>
+<br>
+<span>&copy; 2017 . Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>.</span>
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
 
 
 
-  </body>
+          
+
+</body>
 </html>

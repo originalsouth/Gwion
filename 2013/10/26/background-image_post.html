@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>example doc &#8211; Gwion</title>
-<meta name="description" content="A strongly timed musical programming language">
-
+<title>Post with a Background Image &#8211; Gwion</title>
+<meta name="description" content="Sample post with a background image CSS override.">
+<meta name="keywords" content="sample post">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="example doc">
-<meta property="og:description" content="A strongly timed musical programming language">
-<meta property="og:url" content="/examples/doc.html">
+<meta property="og:title" content="Post with a Background Image">
+<meta property="og:description" content="Sample post with a background image CSS override.">
+<meta property="og:url" content="/2013/10/26/background-image_post.html">
 <meta property="og:site_name" content="Gwion">
 
 
 
 
 
-<link rel="canonical" href="/examples/doc.html">
+<link rel="canonical" href="/2013/10/26/background-image_post.html">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gwion Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -58,7 +58,7 @@
 
 
 
-<style type="text/css">body {background-image:url(/images/stone_background.jpg);}</style>
+<style type="text/css">body {background-image:url(/images/triangular.png);}</style>
 
 <!-- hack --> 
 <a href="https://github.com/fennecdjay/Gwion"><img style="position: absolute; top: 0; right: 0; border: 0;" 
@@ -69,7 +69,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 </head>
 
-<body id="post-index" >
+<body id="post" >
 
 <!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
 <nav id="dl-menu" class="dl-menuwrapper" role="navigation">
@@ -129,39 +129,52 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 </nav><!-- /.dl-menuwrapper -->
 
 
-<div class="entry-header">
-  
-  
-  <div class="header-title">
-    <div class="header-title-wrap">
-      <h1>Gwion</h1>
-      <h4>A strongly timed musical programming language</h4>
-      <h2>example doc</h2>
-    </div><!-- /.header-title-wrap -->
-  </div><!-- /.header-title -->
-</div><!-- /.entry-header -->
+
 
 <div id="main" role="main">
-<article class="hentry">
-  <br>this page documents <b>doc.gw</b><br><p>
-<div class="highlight"><pre><span></span><span class="c1">// generate main doc</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;examples/int.gw&quot;</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">doc</span><span class="p">(</span><span class="s">&quot;global_context&quot;</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">adept</span><span class="p">(</span><span class="s">&quot;global_context&quot;</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">doc</span><span class="p">(</span><span class="s">&quot;examples/class.gw&quot;</span><span class="p">);</span>
+  <article class="hentry">
+    <header class="header-title">
+      <div class="header-title-wrap">
+        
+          <h1 class="entry-title"><a href="/2013/10/26/background-image_post.html" rel="bookmark" title="Post with a Background Image">Post with a Background Image</a></h1>
+        
+        <h2><span class="entry-date date published"><time datetime="2013-10-26T00:00:00+02:00">October 26, 2013</time></span></h2>
+        
+      </div><!-- /.header-title-wrap -->
+    </header>
+    <div class="entry-content">
+      <p>Here be a sample post with a custom background image. To utilize this “feature” just add the following YAML to a post’s front matter.</p>
 
-<span class="n">Machine</span><span class="p">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;/tmp&quot;</span><span class="p">,</span> <span class="s">&quot;int i;&lt;&lt;&lt;120&gt;&gt;&gt;;&quot;</span><span class="p">);</span>
-<span class="c1">//Machine.compile(&quot;/tmp&quot;, &quot;int i[error];&quot;);</span>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">image</span><span class="pi">:</span>
+  <span class="s">background</span><span class="pi">:</span> <span class="s">filename.png</span>
+</code></pre>
+</div>
 
-<span class="o">&lt;&lt;&lt;</span><span class="n">Machine</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="s">&quot;/tmp/&quot;</span><span class="p">,</span><span class="s">&quot;int i;&quot;</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="s">&quot;/tmp/&quot;</span><span class="p">,</span> <span class="s">&quot;int i[error];&quot;</span><span class="p">);</span> <span class="c1">// leak parsed invalid array.</span>
+<p>This little bit of YAML makes the assumption that your background image asset is in the <code class="highlighter-rouge">/images</code> folder. If you place it somewhere else or are hotlinking 
+from the web, just include the full http(s):// URL. Either way you should have a background image that is tiled.</p>
 
-<span class="n">Machine</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">doc_update</span><span class="p">();</span>
-</pre></div>
-</p>
+<p>If you want to set a background image for the entire site just add <code class="highlighter-rouge">background: filename.png</code> to your <code class="highlighter-rouge">_config.yml</code> and BOOM — background images on 
+every page!</p>
 
-</article>
+<div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://subtlepatterns.com" class="notice">Background images 
+from <span property="dct:title">Subtle Patterns</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://subtlepatterns.com">Subtle 
+Patterns</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></div>
+
+      <footer class="entry-meta">
+        <span class="entry-tags"><a href="/tags/#sample post" title="Pages tagged sample post" class="tag"><span class="term">sample post</span></a></span>
+        
+        <div class="social-share">
+  <ul class="socialcount socialcount-small inline-list">
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/2013/10/26/background-image_post.html" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/2013/10/26/background-image_post.html" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/2013/10/26/background-image_post.html" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+  </ul>
+</div><!-- /.social-share -->
+      </footer>
+    </div><!-- /.entry-content -->
+    
+    
+  </article>
 </div><!-- /#main -->
 
 <div class="footer-wrapper">
@@ -185,7 +198,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 
 
-          
+	        
 
 </body>
 </html>
