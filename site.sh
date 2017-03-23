@@ -66,16 +66,18 @@ function doc()
 
 for a in doc/*.html
 do
-        sed -i 's/<script type="text\/javascript" src="/<script type="text\/javascript" src="doc\//' $a; sed -i 's/{%/{ %/' $a
+#        sed -i 's/<script type="text\/javascript" src="/<script type="text\/javascript" src="doc\//' $a;
+		sed -i 's/{%/{ %/' $a
 		content=$(cat $a)
-        echo -e "---\nlayout: default\ntitle: $(echo ${a/.html//} | sed 's#doc/##')\nimage:\n  feature: abstract-1.jpg\n---\n" > $a
+        echo -e "---\nlayout: homepage\ntitle: $(echo ${a/.html//} | sed 's#doc/##')\nimage:\n  feature: abstract-1.jpg\n---\n" > $a
         echo "$content" >> $a
 done
 	sed -i 's/,url:"/,url:"doc\//' doc/menudata.js
 	rm -rf search
 	cp -r doc/search search
 #	mv doc/search search
-	cp search.js doc/search
+
+#	cp search.js doc/search
 
 #	sed -i "s/this.resultsPath + '/doc\/' + this.resultsPath + '/" doc/search/search.js
 #for a in doc/search/*.js
