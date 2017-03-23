@@ -59,11 +59,29 @@ function doc()
 {
 #	mkdir Gwion
 	rm -rf doc
-	for dir in core eval drvr lang include
-	do  git checkout master -- "$a"
-	done
-#	doxygen
-#	rm -rf Gwion
+#	for dir in core eval drvr lang include
+#	do  git checkout master -- "$a"
+#	done
+	doxygen
+
+for a in doc/*.html
+do
+        sed -i 's/<script type="text\/javascript" src="/<script type="text\/javascript" src="doc\//' $a; sed -i 's/{%/{ %/' $a
+		content=$(cat $a)
+        echo -e "---\nlayout: default\ntitle: $(echo ${a/.html//} | sed 's#doc/##')\nimage:\n  feature: abstract-1.jpg\n---\n" > $a
+        echo "$content" >> $a
+done
+	sed -i 's/,url:"/,url:"doc\//' doc/menudata.js
+
+
+for a in doc/search/*.js
+do
+	[ "$a" = "doc/search/searchdata.js" ] && continue
+	[ "$a" = "doc/search/search.js" ] && continue
+	sed -i "s#'\],\['../#'\],\['../doc/#g" $a
+	sed -i "s#',\['../#'\],\['../doc/#g" $a
+done
+
 }
 
 function examples()

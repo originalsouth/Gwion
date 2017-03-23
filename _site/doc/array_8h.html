@@ -1,3 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<title>array_8h/ &#8211; Gwion</title>
+<meta name="description" content="A strongly timed musical programming language">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="array_8h/">
+<meta property="og:description" content="A strongly timed musical programming language">
+<meta property="og:url" content="/doc/array_8h.html">
+<meta property="og:site_name" content="Gwion">
+
+
+
+
+
+<link rel="canonical" href="/doc/array_8h.html">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Gwion Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+
+<style type="text/css">body {background-image:url(/images/stone_background.jpg);}</style>
+
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</a>
+
+</head>
+
+<body id="post-index" class="feature">
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="/">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li>
+					<img src="/images/avatar.jpg" alt="Jérémie Astor photo" class="author-photo">
+					<h4>Jérémie Astor</h4>
+					<p>musician</p>
+				</li>
+				<li><a href="/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				<li>
+					<a href="mailto:astor.jeremie@wanadoo.fr*"><i class="fa fa-fw fa-envelope"></i> Email</a>
+				</li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</ul><!-- /.dl-submenu -->
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="/posts/">All Posts</a></li>
+				<li><a href="/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	    
+<li><a href="/ast" >AST</a></li>
+<!--
+	    <li><a href="/ast" >AST</a></li> -->
+	  
+	    
+<li><a href="/plugins" >Plugins</a></li>
+<!--
+	    <li><a href="/plugins" >Plugins</a></li> -->
+	  
+	    
+<li><a href="/features" >Features</a></li>
+<!--
+	    <li><a href="/features" >Features</a></li> -->
+	  
+	    
+<li><a href="/examples" >Examples</a></li>
+<!--
+	    <li><a href="/examples" >Examples</a></li> -->
+	  
+	    
+<li><a href="/doc" >Dev docs</a></li>
+<!--
+	    <li><a href="/doc" >Dev docs</a></li> -->
+	  
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="entry-header">
+  
+  
+    <div class="entry-image">
+      <img src="/images/abstract-1.jpg" alt="array_8h/">
+    </div><!-- /.entry-image -->
+  
+  <div class="header-title">
+    <div class="header-title-wrap">
+      <h1><a href="">Gwion</a></h1>
+      <h3>A strongly timed musical programming language</h3>
+      <h2>array_8h/</h2>
+    </div><!-- /.header-title-wrap -->
+  </div><!-- /.header-title -->
+</div><!-- /.entry-header -->
+
+
+
+
+<div id="main" role="main"><article>
+<!-- HTML header for doxygen 1.8.13-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,13 +158,13 @@
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Gwion dev-docs: include/array.h File Reference</title>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="dynsections.js"></script>
-<link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
-<script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doc/tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doc/jquery.js"></script>
+<script type="text/javascript" src="doc/dynsections.js"></script>
+<link href="doc/search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="doc/search/searchdata.js"></script>
+<script type="text/javascript" src="doc/search/search.js"></script>
+<link href="doc/doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -34,8 +186,8 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript" src="doc/menudata.js"></script>
+<script type="text/javascript" src="doc/menu.js"></script>
 <script type="text/javascript">
 $(function() {
   initMenu('',true,false,'search.php','Search');
@@ -59,88 +211,88 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="doc/dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="doc/#nested-classes">Data Structures</a> &#124;
+<a href="doc/#typedef-members">Typedefs</a> &#124;
+<a href="doc/#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">array.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;complex.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="map_8h_source.html">map.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="doc/map_8h_source.html">map.h</a>&quot;</code><br />
 </div>
-<p><a href="array_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="doc/array_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVM__Array__Info.html">VM_Array_Info</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/structVM__Array__Info.html">VM_Array_Info</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structM__Vector.html">M_Vector</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/structM__Vector.html">M_Vector</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVM__Array__.html">VM_Array_</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/structVM__Array__.html">VM_Array_</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aaf47f831216292de5af23940b64f617e"><td class="memItemLeft" align="right" valign="top">typedef struct VM_Vector_ *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#aaf47f831216292de5af23940b64f617e">VM_Vector</a></td></tr>
+<tr class="memitem:aaf47f831216292de5af23940b64f617e"><td class="memItemLeft" align="right" valign="top">typedef struct VM_Vector_ *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#aaf47f831216292de5af23940b64f617e">VM_Vector</a></td></tr>
 <tr class="separator:aaf47f831216292de5af23940b64f617e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab642eae930a632032213f257181d371a"><td class="memItemLeft" align="right" valign="top">m_uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#ab642eae930a632032213f257181d371a">m_vector_size</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v)</td></tr>
+<tr class="memitem:ab642eae930a632032213f257181d371a"><td class="memItemLeft" align="right" valign="top">m_uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#ab642eae930a632032213f257181d371a">m_vector_size</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v)</td></tr>
 <tr class="separator:ab642eae930a632032213f257181d371a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d3a46d61afc8da6d67e810e1dac78be"><td class="memItemLeft" align="right" valign="top">m_uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a1d3a46d61afc8da6d67e810e1dac78be">i_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a1d3a46d61afc8da6d67e810e1dac78be"><td class="memItemLeft" align="right" valign="top">m_uint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a1d3a46d61afc8da6d67e810e1dac78be">i_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a1d3a46d61afc8da6d67e810e1dac78be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab86576d5e587e9d19f92a0f5f877c038"><td class="memItemLeft" align="right" valign="top">m_float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#ab86576d5e587e9d19f92a0f5f877c038">f_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:ab86576d5e587e9d19f92a0f5f877c038"><td class="memItemLeft" align="right" valign="top">m_float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#ab86576d5e587e9d19f92a0f5f877c038">f_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:ab86576d5e587e9d19f92a0f5f877c038"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68281c86f9d8f0f99e04df9b5da40c81"><td class="memItemLeft" align="right" valign="top">complex float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a68281c86f9d8f0f99e04df9b5da40c81">c_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a68281c86f9d8f0f99e04df9b5da40c81"><td class="memItemLeft" align="right" valign="top">complex float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a68281c86f9d8f0f99e04df9b5da40c81">c_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a68281c86f9d8f0f99e04df9b5da40c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04944dacf1ff931166e35e3230f10445"><td class="memItemLeft" align="right" valign="top">VEC3_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a04944dacf1ff931166e35e3230f10445">v3_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a04944dacf1ff931166e35e3230f10445"><td class="memItemLeft" align="right" valign="top">VEC3_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a04944dacf1ff931166e35e3230f10445">v3_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a04944dacf1ff931166e35e3230f10445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d4ccfc10c722b44143d63c189f7265c"><td class="memItemLeft" align="right" valign="top">VEC4_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a4d4ccfc10c722b44143d63c189f7265c">v4_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a4d4ccfc10c722b44143d63c189f7265c"><td class="memItemLeft" align="right" valign="top">VEC4_T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a4d4ccfc10c722b44143d63c189f7265c">v4_vector_at</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a4d4ccfc10c722b44143d63c189f7265c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b119b6e4abe46d419b022934b74d84d"><td class="memItemLeft" align="right" valign="top">m_uint *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a4b119b6e4abe46d419b022934b74d84d">i_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a4b119b6e4abe46d419b022934b74d84d"><td class="memItemLeft" align="right" valign="top">m_uint *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a4b119b6e4abe46d419b022934b74d84d">i_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a4b119b6e4abe46d419b022934b74d84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12070de959f803bd78f3519cd2b8010c"><td class="memItemLeft" align="right" valign="top">m_float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a12070de959f803bd78f3519cd2b8010c">f_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a12070de959f803bd78f3519cd2b8010c"><td class="memItemLeft" align="right" valign="top">m_float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a12070de959f803bd78f3519cd2b8010c">f_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a12070de959f803bd78f3519cd2b8010c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c34e5c95d49b9ca88fdc50399553ded"><td class="memItemLeft" align="right" valign="top">complex float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a4c34e5c95d49b9ca88fdc50399553ded">c_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a4c34e5c95d49b9ca88fdc50399553ded"><td class="memItemLeft" align="right" valign="top">complex float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a4c34e5c95d49b9ca88fdc50399553ded">c_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a4c34e5c95d49b9ca88fdc50399553ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8eeaf65909123a7f66c03ab25a96bb96"><td class="memItemLeft" align="right" valign="top">VEC3_T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a8eeaf65909123a7f66c03ab25a96bb96">v3_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a8eeaf65909123a7f66c03ab25a96bb96"><td class="memItemLeft" align="right" valign="top">VEC3_T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a8eeaf65909123a7f66c03ab25a96bb96">v3_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a8eeaf65909123a7f66c03ab25a96bb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06b8d16f26a1369698c956ce84689a98"><td class="memItemLeft" align="right" valign="top">VEC4_T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a06b8d16f26a1369698c956ce84689a98">v4_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
+<tr class="memitem:a06b8d16f26a1369698c956ce84689a98"><td class="memItemLeft" align="right" valign="top">VEC4_T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a06b8d16f26a1369698c956ce84689a98">v4_vector_addr</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i)</td></tr>
 <tr class="separator:a06b8d16f26a1369698c956ce84689a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae31052ec1eab7aeed220c114a2776572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#ae31052ec1eab7aeed220c114a2776572">i_vector_set</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i, m_uint data)</td></tr>
+<tr class="memitem:ae31052ec1eab7aeed220c114a2776572"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#ae31052ec1eab7aeed220c114a2776572">i_vector_set</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i, m_uint data)</td></tr>
 <tr class="separator:ae31052ec1eab7aeed220c114a2776572"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b10e23da5bb0b69dc2be42d98e95d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#a7b10e23da5bb0b69dc2be42d98e95d8b">f_vector_set</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i, m_float data)</td></tr>
+<tr class="memitem:a7b10e23da5bb0b69dc2be42d98e95d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="doc/array_8h.html#a7b10e23da5bb0b69dc2be42d98e95d8b">f_vector_set</a> (<a class="el" href="structM__Vector.html">M_Vector</a> *v, m_uint i, m_float data)</td></tr>
 <tr class="separator:a7b10e23da5bb0b69dc2be42d98e95d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7d7a10f1ef3dcb04a65f270cf903992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8h.html#ad72d1f9e2536f952be2dad06feea68e3">M_Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#ac7d7a10f1ef3dcb04a65f270cf903992">new_M_Array</a> (m_uint size, m_uint length, m_uint depth)</td></tr>
+<tr class="memitem:ac7d7a10f1ef3dcb04a65f270cf903992"><td class="memItemLeft" align="right" valign="top"><a class="el" href="doc/defs_8h.html#ad72d1f9e2536f952be2dad06feea68e3">M_Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="array_8h.html#ac7d7a10f1ef3dcb04a65f270cf903992">new_M_Array</a> (m_uint size, m_uint length, m_uint depth)</td></tr>
 <tr class="separator:ac7d7a10f1ef3dcb04a65f270cf903992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="aaf47f831216292de5af23940b64f617e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf47f831216292de5af23940b64f617e">&#9670;&nbsp;</a></span>VM_Vector</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#aaf47f831216292de5af23940b64f617e">&#9670;&nbsp;</a></span>VM_Vector</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct VM_Vector_* <a class="el" href="array_8h.html#aaf47f831216292de5af23940b64f617e">VM_Vector</a></td>
+          <td class="memname">typedef struct VM_Vector_* <a class="el" href="doc/array_8h.html#aaf47f831216292de5af23940b64f617e">VM_Vector</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8h_source.html#l00006">6</a> of file <a class="el" href="array_8h_source.html">array.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8h_source.html#l00006">6</a> of file <a class="el" href="array_8h_source.html">array.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4c34e5c95d49b9ca88fdc50399553ded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c34e5c95d49b9ca88fdc50399553ded">&#9670;&nbsp;</a></span>c_vector_addr()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a4c34e5c95d49b9ca88fdc50399553ded">&#9670;&nbsp;</a></span>c_vector_addr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +300,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">complex float* c_vector_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -165,18 +317,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00151">151</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00151">151</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_complex*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_complex*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a68281c86f9d8f0f99e04df9b5da40c81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68281c86f9d8f0f99e04df9b5da40c81">&#9670;&nbsp;</a></span>c_vector_at()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a68281c86f9d8f0f99e04df9b5da40c81">&#9670;&nbsp;</a></span>c_vector_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +336,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">complex float c_vector_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -201,18 +353,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00060">60</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00060">60</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> *(m_complex*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">return</span> *(m_complex*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a12070de959f803bd78f3519cd2b8010c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12070de959f803bd78f3519cd2b8010c">&#9670;&nbsp;</a></span>f_vector_addr()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a12070de959f803bd78f3519cd2b8010c">&#9670;&nbsp;</a></span>f_vector_addr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +372,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">m_float* f_vector_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -237,18 +389,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00146">146</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00146">146</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_float*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_float*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ab86576d5e587e9d19f92a0f5f877c038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab86576d5e587e9d19f92a0f5f877c038">&#9670;&nbsp;</a></span>f_vector_at()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#ab86576d5e587e9d19f92a0f5f877c038">&#9670;&nbsp;</a></span>f_vector_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +408,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">m_float f_vector_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -273,18 +425,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00055">55</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00055">55</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> *(m_float*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> *(m_float*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a7b10e23da5bb0b69dc2be42d98e95d8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b10e23da5bb0b69dc2be42d98e95d8b">&#9670;&nbsp;</a></span>f_vector_set()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a7b10e23da5bb0b69dc2be42d98e95d8b">&#9670;&nbsp;</a></span>f_vector_set()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +444,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void f_vector_set </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -315,19 +467,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00116">116</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00116">116</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00018">M_Vector::len</a>, <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00018">M_Vector::len</a>, <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="analys_8c_source.html#l00662">MFUN()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> = realloc(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a>, v-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a> * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  *(m_float*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>) = data;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/analys_8c_source.html#l00662">MFUN()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> = realloc(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a>, v-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a> * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  *(m_float*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>) = data;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="doc/structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a4b119b6e4abe46d419b022934b74d84d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b119b6e4abe46d419b022934b74d84d">&#9670;&nbsp;</a></span>i_vector_addr()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a4b119b6e4abe46d419b022934b74d84d">&#9670;&nbsp;</a></span>i_vector_addr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,7 +487,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">m_uint* i_vector_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -352,18 +504,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00141">141</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00141">141</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01180">do_alloc_array()</a>, and <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_uint*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01180">do_alloc_array()</a>, and <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">return</span> &amp;*(m_uint*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a1d3a46d61afc8da6d67e810e1dac78be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d3a46d61afc8da6d67e810e1dac78be">&#9670;&nbsp;</a></span>i_vector_at()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a1d3a46d61afc8da6d67e810e1dac78be">&#9670;&nbsp;</a></span>i_vector_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +523,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">m_uint i_vector_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -388,18 +540,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00050">50</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00050">50</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> *(m_uint*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> *(m_uint*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ae31052ec1eab7aeed220c114a2776572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae31052ec1eab7aeed220c114a2776572">&#9670;&nbsp;</a></span>i_vector_set()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#ae31052ec1eab7aeed220c114a2776572">&#9670;&nbsp;</a></span>i_vector_set()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,7 +559,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void i_vector_set </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -430,19 +582,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00110">110</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00110">110</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00018">M_Vector::len</a>, <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00018">M_Vector::len</a>, <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01180">do_alloc_array()</a>, <a class="el" href="instr_8c_source.html#l01229">INSTR()</a>, and <a class="el" href="fileio_8c_source.html#l00255">SFUN()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> = realloc(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a>, v-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a> * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  *(m_uint*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>) = data;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01180">do_alloc_array()</a>, <a class="el" href="instr_8c_source.html#l01229">INSTR()</a>, and <a class="el" href="fileio_8c_source.html#l00255">SFUN()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> = realloc(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a>, v-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a> * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  *(m_uint*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>) = data;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="doc/structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ab642eae930a632032213f257181d371a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab642eae930a632032213f257181d371a">&#9670;&nbsp;</a></span>m_vector_size()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#ab642eae930a632032213f257181d371a">&#9670;&nbsp;</a></span>m_vector_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -450,31 +602,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">m_uint m_vector_size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00044">44</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00044">44</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00018">M_Vector::len</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00018">M_Vector::len</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>, and <a class="el" href="array_8c_source.html#l00166">MFUN()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> v-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a> / v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">/*  return v-&gt;len;*/</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>, and <a class="el" href="array_8c_source.html#l00166">MFUN()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">return</span> v-&gt;<a class="code" href="doc/structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a> / v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">/*  return v-&gt;len;*/</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ac7d7a10f1ef3dcb04a65f270cf903992"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7d7a10f1ef3dcb04a65f270cf903992">&#9670;&nbsp;</a></span>new_M_Array()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#ac7d7a10f1ef3dcb04a65f270cf903992">&#9670;&nbsp;</a></span>new_M_Array()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="defs_8h.html#ad72d1f9e2536f952be2dad06feea68e3">M_Object</a> new_M_Array </td>
+          <td class="memname"><a class="el" href="doc/defs_8h.html#ad72d1f9e2536f952be2dad06feea68e3">M_Object</a> new_M_Array </td>
           <td>(</td>
           <td class="paramtype">m_uint&#160;</td>
           <td class="paramname"><em>size</em>, </td>
@@ -499,28 +651,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00032">32</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00032">32</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="oo_8h_source.html#l00030">M_Object_::array</a>, <a class="el" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">M_Object_::d</a>, <a class="el" href="array_8h_source.html#l00020">M_Vector::depth</a>, <a class="el" href="object_8c_source.html#l00044">initialize_object()</a>, <a class="el" href="array_8h_source.html#l00018">M_Vector::len</a>, <a class="el" href="parser_8c.html#a5faf6a2d99f50a4655dd390199a8db7b">malloc()</a>, <a class="el" href="object_8c_source.html#l00024">new_M_Object()</a>, <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>, and <a class="el" href="type_8h_source.html#l00024">Type_::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/oo_8h_source.html#l00030">M_Object_::array</a>, <a class="el" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">M_Object_::d</a>, <a class="el" href="array_8h_source.html#l00020">M_Vector::depth</a>, <a class="el" href="object_8c_source.html#l00044">initialize_object()</a>, <a class="el" href="array_8h_source.html#l00018">M_Vector::len</a>, <a class="el" href="parser_8c.html#a5faf6a2d99f50a4655dd390199a8db7b">malloc()</a>, <a class="el" href="object_8c_source.html#l00024">new_M_Object()</a>, <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>, and <a class="el" href="type_8h_source.html#l00024">Type_::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01180">do_alloc_array()</a>, <a class="el" href="instr_8c_source.html#l01229">INSTR()</a>, <a class="el" href="analys_8c_source.html#l00662">MFUN()</a>, and <a class="el" href="fileio_8c_source.html#l00255">SFUN()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="structM__Object__.html">M_Object</a> a = <a class="code" href="object_8c.html#a84b8b4a2f7884ca11fdf939bc6c9fe60">new_M_Object</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="object_8c.html#acae50586d090a221f5f9cd07176cf045">initialize_object</a>(a, &amp;<a class="code" href="array_8c.html#a0503b35012d4e86042f36e8270c7556b">t_array</a>);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>        = <a class="code" href="parser_8c.html#a5faf6a2d99f50a4655dd390199a8db7b">malloc</a>(<span class="keyword">sizeof</span>(<a class="code" href="structM__Vector.html">M_Vector</a>));</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a>   = calloc(length, size);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>  = size;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a>   = length * size;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#af9a7df49bce0a6905aad156cc0237a66">depth</a> = depth;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> a;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div><div class="ttc" id="parser_8c_html_a5faf6a2d99f50a4655dd390199a8db7b"><div class="ttname"><a href="parser_8c.html#a5faf6a2d99f50a4655dd390199a8db7b">malloc</a></div><div class="ttdeci">void * malloc(YYSIZE_T)</div></div>
-<div class="ttc" id="structM__Vector_html_af9a7df49bce0a6905aad156cc0237a66"><div class="ttname"><a href="structM__Vector.html#af9a7df49bce0a6905aad156cc0237a66">M_Vector::depth</a></div><div class="ttdeci">m_uint depth</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00020">array.h:20</a></div></div>
-<div class="ttc" id="structM__Vector_html"><div class="ttname"><a href="structM__Vector.html">M_Vector</a></div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00016">array.h:16</a></div></div>
-<div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="object_8c_html_a84b8b4a2f7884ca11fdf939bc6c9fe60"><div class="ttname"><a href="object_8c.html#a84b8b4a2f7884ca11fdf939bc6c9fe60">new_M_Object</a></div><div class="ttdeci">M_Object new_M_Object()</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00024">object.c:24</a></div></div>
-<div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
-<div class="ttc" id="structM__Object___html"><div class="ttname"><a href="structM__Object__.html">M_Object_</a></div><div class="ttdef"><b>Definition:</b> <a href="oo_8h_source.html#l00025">oo.h:25</a></div></div>
-<div class="ttc" id="structM__Object___html_ab317cd3ddd36d348e096eeb59cf95d4c"><div class="ttname"><a href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">M_Object_::array</a></div><div class="ttdeci">M_Vector * array</div><div class="ttdef"><b>Definition:</b> <a href="oo_8h_source.html#l00030">oo.h:30</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
-<div class="ttc" id="array_8c_html_a0503b35012d4e86042f36e8270c7556b"><div class="ttname"><a href="array_8c.html#a0503b35012d4e86042f36e8270c7556b">t_array</a></div><div class="ttdeci">struct Type_ t_array</div><div class="ttdef"><b>Definition:</b> <a href="array_8c_source.html#l00011">array.c:11</a></div></div>
-<div class="ttc" id="structM__Object___html_a7f9f5666780c375b5a9e4972ca8f418f"><div class="ttname"><a href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">M_Object_::d</a></div><div class="ttdeci">union M_Object_::@8 d</div></div>
-<div class="ttc" id="object_8c_html_acae50586d090a221f5f9cd07176cf045"><div class="ttname"><a href="object_8c.html#acae50586d090a221f5f9cd07176cf045">initialize_object</a></div><div class="ttdeci">m_bool initialize_object(M_Object object, Type type)</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00044">object.c:44</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01180">do_alloc_array()</a>, <a class="el" href="instr_8c_source.html#l01229">INSTR()</a>, <a class="el" href="analys_8c_source.html#l00662">MFUN()</a>, and <a class="el" href="fileio_8c_source.html#l00255">SFUN()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="doc/structM__Object__.html">M_Object</a> a = <a class="code" href="object_8c.html#a84b8b4a2f7884ca11fdf939bc6c9fe60">new_M_Object</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="object_8c.html#acae50586d090a221f5f9cd07176cf045">initialize_object</a>(a, &amp;<a class="code" href="array_8c.html#a0503b35012d4e86042f36e8270c7556b">t_array</a>);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>        = <a class="code" href="parser_8c.html#a5faf6a2d99f50a4655dd390199a8db7b">malloc</a>(<span class="keyword">sizeof</span>(<a class="code" href="structM__Vector.html">M_Vector</a>));</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a>   = calloc(length, size);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>  = size;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">len</a>   = length * size;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  a-&gt;<a class="code" href="structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">d</a>.<a class="code" href="structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">array</a>-&gt;<a class="code" href="structM__Vector.html#af9a7df49bce0a6905aad156cc0237a66">depth</a> = depth;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> a;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div><div class="ttc" id="parser_8c_html_a5faf6a2d99f50a4655dd390199a8db7b"><div class="ttname"><a href="parser_8c.html#a5faf6a2d99f50a4655dd390199a8db7b">malloc</a></div><div class="ttdeci">void * malloc(YYSIZE_T)</div></div>
+<div class="ttc" id="structM__Vector_html_af9a7df49bce0a6905aad156cc0237a66"><div class="ttname"><a href="doc/structM__Vector.html#af9a7df49bce0a6905aad156cc0237a66">M_Vector::depth</a></div><div class="ttdeci">m_uint depth</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00020">array.h:20</a></div></div>
+<div class="ttc" id="structM__Vector_html"><div class="ttname"><a href="doc/structM__Vector.html">M_Vector</a></div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00016">array.h:16</a></div></div>
+<div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="object_8c_html_a84b8b4a2f7884ca11fdf939bc6c9fe60"><div class="ttname"><a href="doc/object_8c.html#a84b8b4a2f7884ca11fdf939bc6c9fe60">new_M_Object</a></div><div class="ttdeci">M_Object new_M_Object()</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00024">object.c:24</a></div></div>
+<div class="ttc" id="structM__Vector_html_a2efc2d4b7da5d401e1850451120bc8e1"><div class="ttname"><a href="doc/structM__Vector.html#a2efc2d4b7da5d401e1850451120bc8e1">M_Vector::len</a></div><div class="ttdeci">m_uint len</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00018">array.h:18</a></div></div>
+<div class="ttc" id="structM__Object___html"><div class="ttname"><a href="doc/structM__Object__.html">M_Object_</a></div><div class="ttdef"><b>Definition:</b> <a href="oo_8h_source.html#l00025">oo.h:25</a></div></div>
+<div class="ttc" id="structM__Object___html_ab317cd3ddd36d348e096eeb59cf95d4c"><div class="ttname"><a href="doc/structM__Object__.html#ab317cd3ddd36d348e096eeb59cf95d4c">M_Object_::array</a></div><div class="ttdeci">M_Vector * array</div><div class="ttdef"><b>Definition:</b> <a href="oo_8h_source.html#l00030">oo.h:30</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<div class="ttc" id="array_8c_html_a0503b35012d4e86042f36e8270c7556b"><div class="ttname"><a href="doc/array_8c.html#a0503b35012d4e86042f36e8270c7556b">t_array</a></div><div class="ttdeci">struct Type_ t_array</div><div class="ttdef"><b>Definition:</b> <a href="array_8c_source.html#l00011">array.c:11</a></div></div>
+<div class="ttc" id="structM__Object___html_a7f9f5666780c375b5a9e4972ca8f418f"><div class="ttname"><a href="doc/structM__Object__.html#a7f9f5666780c375b5a9e4972ca8f418f">M_Object_::d</a></div><div class="ttdeci">union M_Object_::@8 d</div></div>
+<div class="ttc" id="object_8c_html_acae50586d090a221f5f9cd07176cf045"><div class="ttname"><a href="doc/object_8c.html#acae50586d090a221f5f9cd07176cf045">initialize_object</a></div><div class="ttdeci">m_bool initialize_object(M_Object object, Type type)</div><div class="ttdef"><b>Definition:</b> <a href="object_8c_source.html#l00044">object.c:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a8eeaf65909123a7f66c03ab25a96bb96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8eeaf65909123a7f66c03ab25a96bb96">&#9670;&nbsp;</a></span>v3_vector_addr()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a8eeaf65909123a7f66c03ab25a96bb96">&#9670;&nbsp;</a></span>v3_vector_addr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,7 +680,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">VEC3_T* v3_vector_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -545,18 +697,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00156">156</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00156">156</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">return</span> &amp;*(VEC3_T*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">return</span> &amp;*(VEC3_T*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a04944dacf1ff931166e35e3230f10445"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04944dacf1ff931166e35e3230f10445">&#9670;&nbsp;</a></span>v3_vector_at()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a04944dacf1ff931166e35e3230f10445">&#9670;&nbsp;</a></span>v3_vector_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,7 +716,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">VEC3_T v3_vector_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -581,18 +733,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00065">65</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00065">65</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> *(VEC3_T*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordflow">return</span> *(VEC3_T*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a06b8d16f26a1369698c956ce84689a98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06b8d16f26a1369698c956ce84689a98">&#9670;&nbsp;</a></span>v4_vector_addr()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a06b8d16f26a1369698c956ce84689a98">&#9670;&nbsp;</a></span>v4_vector_addr()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -600,7 +752,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">VEC4_T* v4_vector_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -617,18 +769,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00161">161</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00161">161</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">return</span> &amp;*(VEC4_T*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">return</span> &amp;*(VEC4_T*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a4d4ccfc10c722b44143d63c189f7265c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d4ccfc10c722b44143d63c189f7265c">&#9670;&nbsp;</a></span>v4_vector_at()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="doc/#a4d4ccfc10c722b44143d63c189f7265c">&#9670;&nbsp;</a></span>v4_vector_at()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -636,7 +788,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">VEC4_T v4_vector_at </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structM__Vector.html">M_Vector</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="doc/structM__Vector.html">M_Vector</a> *&#160;</td>
           <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
@@ -653,22 +805,54 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="array_8c_source.html#l00070">70</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="doc/array_8c_source.html#l00070">70</a> of file <a class="el" href="array_8c_source.html">array.c</a>.</p>
 
-<p class="reference">References <a class="el" href="array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
+<p class="reference">References <a class="el" href="doc/array_8h_source.html#l00017">M_Vector::ptr</a>, and <a class="el" href="array_8h_source.html#l00019">M_Vector::size</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="instr_8c_source.html#l01305">INSTR()</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> *(VEC4_T*)(v-&gt;<a class="code" href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
-<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
+<p class="reference">Referenced by <a class="el" href="doc/instr_8c_source.html#l01305">INSTR()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> *(VEC4_T*)(v-&gt;<a class="code" href="doc/structM__Vector.html#a868db6fecb86c9276f98a986af486f28">ptr</a> + i * v-&gt;<a class="code" href="structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">size</a>);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div><div class="ttc" id="structM__Vector_html_a868db6fecb86c9276f98a986af486f28"><div class="ttname"><a href="structM__Vector.html#a868db6fecb86c9276f98a986af486f28">M_Vector::ptr</a></div><div class="ttdeci">char * ptr</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00017">array.h:17</a></div></div>
+<div class="ttc" id="structM__Vector_html_a08a02e3ef64e56f51bcf0166eb822cc4"><div class="ttname"><a href="doc/structM__Vector.html#a08a02e3ef64e56f51bcf0166eb822cc4">M_Vector::size</a></div><div class="ttdeci">m_uint size</div><div class="ttdef"><b>Definition:</b> <a href="array_8h_source.html#l00019">array.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.13-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
+Generated by &#160;<a href="doc/http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
+</body>
+</html>
+
+</article></div><!-- /#main -->
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay" data-style="mega" data-count-href="/fennecdjay/followers" data-count-api="/users/fennecdjay#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @fennecdjay on GitHub">Follow @fennecdjay</a>
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion/subscription" data-icon="octicon-eye" data-style="mega" data-count-href="/fennecdjay/Gwion/watchers" data-count-api="/repos/fennecdjay/Gwion#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch fennecdjay/Gwion on GitHub">Watch</a><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion" data-icon="octicon-star" data-style="mega" data-count-href="/fennecdjay/Gwion/stargazers" data-count-api="/repos/fennecdjay/Gwion#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star fennecdjay/Gwion on GitHub">Star</a><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/fennecdjay/Gwion#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue fennecdjay/Gwion on GitHub">Issue</a><!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/fennecdjay/Gwion/archive/master.zip" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download fennecdjay/Gwion on GitHub">Download</a>
+<br>
+<span>&copy; 2017 Jérémie Astor. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>.</span>
+<a href="https://github.com/fennecdjay/Gwion"><img style="position: absolute; top: 0; right: 0; border: 0;" 
+src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" 
+alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+          
+
+
 </body>
 </html>
