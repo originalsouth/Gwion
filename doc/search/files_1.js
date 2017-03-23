@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bbq_2eh',['bbq.h'],['../doc/bbq_8h.html',1,'']]]
+  ['bbq_2eh',['bbq.h',['../bbq_8h.html',1,'']]]
 ];

@@ -324,7 +324,7 @@ function SearchBox(name, resultsPath, inFrame, label)
     if (idx!=-1)
     {
        var hexCode=idx.toString(16);
-       resultsPage = this.resultsPath + '/' + indexSectionNames[this.searchIndex] + '_' + hexCode + '.html';
+       resultsPage = 'doc/' + this.resultsPath + '/' + indexSectionNames[this.searchIndex] + '_' + hexCode + '.html';
        resultsPageWithSearch = resultsPage+'?'+escape(searchValue);
        hasResultsPage = true;
     }

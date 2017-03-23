@@ -72,15 +72,19 @@ do
         echo "$content" >> $a
 done
 	sed -i 's/,url:"/,url:"doc\//' doc/menudata.js
+	rm -rf search
+	cp -r doc/search search
+#	mv doc/search search
+	cp search.js doc/search
 
-
-for a in doc/search/*.js
-do
-	[ "$a" = "doc/search/searchdata.js" ] && continue
-	[ "$a" = "doc/search/search.js" ] && continue
-	sed -i "s#'\],\['../#'\],\['../doc/#g" $a
-	sed -i "s#',\['../#'\],\['../doc/#g" $a
-done
+#	sed -i "s/this.resultsPath + '/doc\/' + this.resultsPath + '/" doc/search/search.js
+#for a in doc/search/*.js
+#do
+#	[ "$a" = "doc/search/searchdata.js" ] && continue
+#	[ "$a" = "doc/search/search.js" ] && continue
+#	sed -i "s#'\],\['../#'\],\['../doc/#g" $a
+#	sed -i "s#',\['../#'\],\['../doc/#g" $a
+#done
 
 }
 
