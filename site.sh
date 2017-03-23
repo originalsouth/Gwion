@@ -72,7 +72,7 @@ do
         echo -e "---\nlayout: homepage\ntitle: $(echo ${a/.html//} | sed 's#doc/##')\nimage:\n  feature: abstract-1.jpg\n---\n" > $a
         echo "$content" >> $a
 done
-	sed -i 's/,url:"/,url:"doc\//' doc/menudata.js
+#	sed -i 's/,url:"/,url:"doc\//' doc/menudata.js
 	rm -rf search
 	cp -r doc/search search
 #	mv doc/search search
