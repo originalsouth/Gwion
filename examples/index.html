@@ -1,15 +1,12 @@
 ---
-layout: default
-title: Examples
-target: examples
-image:
-  feature: abstract-1.jpg
-#  credit:
-#  creditlink:
+layout: homepage
+title:	{{post.title}}
 ---
-
+  <h1>Examples</h1>
+  <ul class="posts">
 {% for post in site.pages %}
-	{% if post.categories contains page.target %}
-      <li><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title}}</a></li>
+	{% if post.categories == "examples" %}
+		<li><span><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></li>
 	{% endif %}
 {% endfor %}
+  </ul>

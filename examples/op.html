@@ -8,22 +8,4 @@ image:
 #  creditlink:
 ---
 <br>this page documents <b>op.gw</b><br><p>
-<div class="highlight"><pre><span></span><span class="c1">//! test operator</span>
-
-<span class="k">operator</span> <span class="kt">void</span> <span class="nf">chuck</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">){</span> <span class="o">&lt;&lt;&lt;</span><span class="n">o</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">&quot;success&quot;</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span> <span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
-	<span class="n">Object</span> <span class="err">@</span><span class="n">ref</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">operator</span> <span class="kt">void</span> <span class="n">chuck</span><span class="p">(</span><span class="n">Object</span> <span class="n">o</span><span class="p">,</span> <span class="n">C</span> <span class="n">c</span><span class="p">){</span> <span class="n">o</span> <span class="err">@</span><span class="o">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">ref</span><span class="p">;</span> <span class="o">&lt;&lt;&lt;</span><span class="s">&quot;success&quot;</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span> <span class="p">}</span>
-<span class="c1">//operator int plusplus(NULL d, int i){}</span>
-<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-<span class="n">Object</span> <span class="n">o</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">o</span><span class="p">,</span> <span class="n">i</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="mi">12</span> <span class="o">=&gt;</span> <span class="n">i</span><span class="p">;</span>
-<span class="c1">//o =&gt; i;</span>
-<span class="n">C</span> <span class="n">c</span><span class="p">;</span>
-<span class="n">o</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="p">;</span>
-</pre></div>
 </p>

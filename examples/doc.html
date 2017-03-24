@@ -8,19 +8,4 @@ image:
 #  creditlink:
 ---
 <br>this page documents <b>doc.gw</b><br><p>
-<div class="highlight"><pre><span></span><span class="c1">// generate main doc</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;examples/int.gw&quot;</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">doc</span><span class="p">(</span><span class="s">&quot;global_context&quot;</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">adept</span><span class="p">(</span><span class="s">&quot;global_context&quot;</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">doc</span><span class="p">(</span><span class="s">&quot;examples/class.gw&quot;</span><span class="p">);</span>
-
-<span class="n">Machine</span><span class="p">.</span><span class="n">compile</span><span class="p">(</span><span class="s">&quot;/tmp&quot;</span><span class="p">,</span> <span class="s">&quot;int i;&lt;&lt;&lt;120&gt;&gt;&gt;;&quot;</span><span class="p">);</span>
-<span class="c1">//Machine.compile(&quot;/tmp&quot;, &quot;int i[error];&quot;);</span>
-
-<span class="o">&lt;&lt;&lt;</span><span class="n">Machine</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="s">&quot;/tmp/&quot;</span><span class="p">,</span><span class="s">&quot;int i;&quot;</span><span class="p">)</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="s">&quot;/tmp/&quot;</span><span class="p">,</span> <span class="s">&quot;int i[error];&quot;</span><span class="p">);</span> <span class="c1">// leak parsed invalid array.</span>
-
-<span class="n">Machine</span><span class="p">.</span><span class="n">check</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-<span class="n">Machine</span><span class="p">.</span><span class="n">doc_update</span><span class="p">();</span>
-</pre></div>
 </p>

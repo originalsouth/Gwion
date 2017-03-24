@@ -8,29 +8,4 @@ image:
 #  creditlink:
 ---
 <br>this page documents <b>func_ptr.gw</b><br><p>
-<div class="highlight"><pre><span></span><span class="c1">// define a function pointer type</span>
-<span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="n">Test</span><span class="p">)()</span>
-
-<span class="c1">// define a few functions</span>
-<span class="n">function</span> <span class="kt">void</span> <span class="n">test1</span><span class="p">(){</span> <span class="o">&lt;&lt;&lt;</span><span class="s">&quot;test&quot;</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span> <span class="p">};</span>
-<span class="n">function</span> <span class="kt">void</span> <span class="nf">test2</span><span class="p">(){</span> <span class="o">&lt;&lt;&lt;</span><span class="s">&quot;another test&quot;</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span> <span class="p">};</span>
-<span class="n">function</span> <span class="kt">void</span> <span class="nf">test3</span><span class="p">(){</span> <span class="o">&lt;&lt;&lt;</span><span class="s">&quot;yet another test&quot;</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span> <span class="p">};</span>
-
-<span class="c1">// create a function pointer instance</span>
-<span class="n">Test</span> <span class="n">test</span><span class="p">;</span>
-
-<span class="c1">// assign it a function</span>
-<span class="n">test1</span> <span class="err">@</span><span class="o">=&gt;</span> <span class="n">test</span><span class="p">;</span>
-<span class="c1">// test it</span>
-<span class="n">test</span><span class="p">();</span>
-
-<span class="c1">// ...</span>
-<span class="n">test2</span> <span class="err">@</span><span class="o">=&gt;</span> <span class="n">test</span><span class="p">;</span>
-<span class="n">test</span><span class="p">();</span>
-
-<span class="n">test3</span> <span class="err">@</span><span class="o">=&gt;</span> <span class="n">test</span><span class="p">;</span>
-<span class="n">test</span><span class="p">();</span>
-
-<span class="o">&lt;&lt;&lt;</span> <span class="n">test3</span> <span class="err">$</span> <span class="n">Test</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-</pre></div>
 </p>

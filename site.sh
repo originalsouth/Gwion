@@ -1,19 +1,20 @@
-#!/bin/sh
+#!/bin/bash
 # deploy site on gh-pages
 
-function post()
+post()
 {
-	if [ ls -d */ | grep "$1" ]
+	if echo ./*/ | grep -v "$1" > /dev/null
 	then
 		echo "first arg must be a directory, or 'run' or 'deploy'"
 		return
 	fi
-	echo -e "---\nlayout:     page\ntitle:      $2" > $1/$2.html
-	echo -e "categories: $1\n---\n" >> $1/$2.html
-	nano $1/$2.html
+	[ -z "$2" ] && echo "'post' needs two arguments." && return
+	printf 'FRONTMATTER\nlayout: page\ntitle: %s\ncategories: %s\nFRONTMATTER\n' "$2" "$1" >> "$1/$2.html"
+	sed -i 's/FRONTMATTER/---/' "$1/$2.html"
+	nano "$1/$2.html"
 }
 
-function deploy()
+deploy()
 {
 #	git add .
 #	git commit -am 'Pre-deploy commit :smile:'
@@ -22,7 +23,7 @@ function deploy()
 	mv _site /tmp
 	rm .jekyll-metadata
 	git checkout gh-pages || { echo "error: gh-pages checkout"; return; }
-	rm -rf *
+	rm -rf ./*
 	mv /tmp/_site/* .
 	git add .
 	git commit -am 'Yeah. Built from subdir'
@@ -37,7 +38,7 @@ on_int()
 	rm -rf _site
 }
 #run the size locally. access with localhost:4000
-function run()
+run()
 {
 	trap on_int INT
 	sed -i '/base/s/^/#/g' _config.yml #comment
@@ -50,58 +51,67 @@ trap 'rm -rf _site; exit' QUIT
 trap 'rm -rf _site; exit' TERM
 trap 'rm -rf _site; exit' EXIT
 
-function send_gist()
+gw_doc()
 {
-	echo $(gist -u $1 -f $2| sed "s/https:\/\/gist.github.com\///") >> known_gist
+# maybe construct
+	local head desc
+	rm -r gw_doc
+	cp -r /usr/lib/Gwion/doc/ gw_doc
+	for a in gw_doc/*.html
+	do
+		head=$(grep "<title" < "$a" | sed "s/.*<title>Gwion: \(.*\)<\/title>.*/\1/" | sed "s#/#\/#")
+		desc=$(grep "<meta"  < "$a" | sed "s/.*<em>\(.*\)<\/em>/\1/" | sed "s#/#\/#g" | sed "s#</div>##g")
+		echo -e "---\nlayout: homepage\ntitle: $head\ncategorie: user\nimage:\n  feature: abstract-1.jpg\n---\n$(cat "$a")" > "$a"
+    	sed -i "s/^<h1>.*<\/h1>$/<article>/" "$a"
+		sed -i "s/<title>.*<\/title>//" "$a"
+    	sed -i "s/<meta http-equiv.*<script>\(.*\)<\/script><em>\(.*\)<\/em>/<body><section>\n<h3>\2<\/h3><h4>$desc<\/h4><article>/" "$a"
+		sed -i "s/<^\/section>/<\/article><\/section>/"   "$a"
+		sed -i "s/<section class=\"page-header\"><h1 class=\"project-name\">.*<\/h2><\/section>//" "$a"
+		sed -i "s/<section class=\"main-content\"><h1 class=\"title\">.*<\/em>/<section class=\"main-content\"><h4>$desc<\/h4>/" "$a"
+	done
+	echo -e "---\nlayout: homepage\ntitle: Gwion generated doc\ncategorie: user\nimage:\n  feature: abstract-1.jpg\n---\nHomepage for self generated doc." > gw_doc/index.html
+	echo '
+<script src="dynsections.js" type="text/javascript" charset="utf-8"></script>
+<script src="jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src="search/list.js" type="text/javascript" charset="utf-8"></script>
+<script src="search/search.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">$(document).ready(function() { searchBox.OnSelectItem(0); });</script>
+<script type="text/javascript">var searchBox = new SearchBox("searchBox", "search",false,"Search");</script>
+<div id="MSearchBox" class="MSearchBoxInactive">  <span class="left">    <img id="MSearchSelect" src="search/mag_sel.png"      onmouseover="return searchBox.OnSearchSelectShow()"      onmouseout="return searchBox.OnSearchSelectHide()"      alt=""/>    <input type="text" id="MSearchField" value="Search" accesskey="S"      onfocus="searchBox.OnSearchFieldFocus(true)"      onblur="searchBox.OnSearchFieldFocus(false)"      onkeyup="searchBox.OnSearchFieldChange(event)"/>  </span>  <span class="right">    <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" sr$  </span></div><div id="doc-content"><!-- window showing the filter options --><div id="MSearchSelectWindow"     onmouseover="return searchBox.OnSearchSelectShow()"     onmouseout="return searchBox.OnSearchSelectHide()"     onkeydown="return searchBox.OnSearchSelectKey(event)"><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Core</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Plugins</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>User</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Public</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Private</a></div><!-- iframe showing the search results (closed by default) --><div id="MSearchResultsWindow"><iframe src="javascript:void(0)" frameborder="0"        name="MSearchResults" id="MSearchResults"></iframe></div></div>
+' >> gw_doc/index.html
 }
 
-function doc()
+c_doc()
 {
-#	mkdir Gwion
-	rm -rf doc
-#	for dir in core eval drvr lang include
-#	do  git checkout master -- "$a"
-#	done
+# todo: import sources
+	rm -rf c_doc
 	doxygen
 
-for a in doc/*.html
-do
-#        sed -i 's/<script type="text\/javascript" src="/<script type="text\/javascript" src="doc\//' $a;
-		sed -i 's/{%/{ %/' $a
-		content=$(cat $a)
-        echo -e "---\nlayout: homepage\ntitle: $(echo ${a/.html//} | sed 's#doc/##')\nimage:\n  feature: abstract-1.jpg\n---\n" > $a
-        echo "$content" >> $a
-done
-#	sed -i 's/,url:"/,url:"doc\//' doc/menudata.js
+	for a in c_doc/*.html
+	do
+		local content name
+		sed -i 's/{%/{ %/' "$a"
+		content=$(cat "$a")
+		name=$(echo ${a/.html//} | sed "s#/##g" | sed "s#_8#.#" | sed "s#struct\(.*\)#\1#")
+        echo -e "---\nlayout: homepage\ntitle: ${name/c_doc/}\nimage:\n  feature: abstract-1.jpg\n---\n" > "$a"
+        echo "$content" >> "$a"
+	done
 	rm -rf search
-	cp -r doc/search search
-#	mv doc/search search
-
-#	cp search.js doc/search
-
-#	sed -i "s/this.resultsPath + '/doc\/' + this.resultsPath + '/" doc/search/search.js
-#for a in doc/search/*.js
-#do
-#	[ "$a" = "doc/search/searchdata.js" ] && continue
-#	[ "$a" = "doc/search/search.js" ] && continue
-#	sed -i "s#'\],\['../#'\],\['../doc/#g" $a
-#	sed -i "s#',\['../#'\],\['../doc/#g" $a
-#done
-
+	cp -r c_doc/search search
 }
 
-function examples()
+examples()
 {
 	rm -rf examples Gwion-examples
 	git checkout master -- examples
 	mv examples Gwion-examples
 	mkdir examples
-	for ex in $(ls Gwion-examples/*.gw)
+	for ex in Gwion-examples/*.gw
 	do
-		NAME=$(basename ${ex/.gw//})
-		echo -e "---\nlayout: default\ntitle: example $NAME\ncategories: [examples]\nimage:\n  feature: abstract-1.jpg\n#  credit:\n#  creditlink:\\n---\n<br>this page documents <b>$NAME.gw</b><br><p>" > examples/$NAME.html
-		pygmentize -f html $ex >> examples/$NAME.html
-	echo "</p>" >> examples/$NAME.html
+		NAME=$(basename "${ex/.gw//}")
+		echo -e "---\nlayout: default\ntitle: example $NAME\ncategories: [examples]\nimage:\n  feature: abstract-1.jpg\n#  credit:\n#  creditlink:\\n---\n<br>this page documents <b>$NAME.gw</b><br><p>" > "examples/$NAME.html"
+		pygmentize -f html "$ex" >> "examples/$NAME.html"
+	echo "</p>" >> "examples/$NAME.html"
 	done
 	echo '---
 layout: homepage
@@ -122,7 +132,7 @@ title:	{{post.title}}
 	echo "you should be done."
 }
 
-function code()
+code()
 {
 	rm -f /tmp/file.gw
 	nano /tmp/file.gw
@@ -133,18 +143,22 @@ function code()
 }
 
 # parse arguments
-if [ "$#" -lt 1 ]
-then
-	echo "usage: $0 run/send_gist \$2 \$3/deploy/code/examples/post $1 $2/"
-elif [ "${1}" = 'run' ]
+#if [ "$#" -lt 1 ]
+#then
+#	echo "usage: $0 run/send_gist \$2 \$3/deploy/code/examples/post $1 $2/"
+#el
+if [ "${1}" = 'run' ]
 then
 	run
 elif [ "${1}" = 'gist' ]
 then
-	send_gist $2 $3
-elif [ "${1}" = 'doc' ]
+	send_gist "$2" "$3"
+elif [ "${1}" = 'c_doc' ]
 then
-	doc
+	c_doc
+elif [ "${1}" = 'gw_doc' ]
+then
+	gw_doc
 elif [ "${1}" = 'deploy' ]
 then
 	deploy
@@ -155,5 +169,5 @@ elif [ "${1}" = 'examples' ]
 then
 	examples
 else
-	post $1 $2
+	post "$1" "$2"
 fi

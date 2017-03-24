@@ -8,37 +8,4 @@ image:
 #  creditlink:
 ---
 <br>this page documents <b>array_multiple.gw</b><br><p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="n">A</span> <span class="n">a</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="mi">2</span> <span class="o">=&gt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">].</span><span class="n">i</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">i</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="mi">54</span> <span class="o">=&gt;</span> <span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-
-<span class="kt">float</span> <span class="n">f</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="mf">12.345</span> <span class="o">=&gt;</span> <span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-
-<span class="n">complex</span> <span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">].</span><span class="n">re</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-
-<span class="n">polar</span> <span class="n">p</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">p</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">].</span><span class="n">mod</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-
-<span class="n">Vec3</span> <span class="n">v</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">].</span><span class="n">x</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-
-<span class="n">Vec4</span> <span class="n">w</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">4</span><span class="p">];</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">w</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">].</span><span class="n">w</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-<span class="o">&lt;&lt;&lt;</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">].</span><span class="n">i</span><span class="o">&gt;&gt;&gt;</span><span class="p">;</span>
-</pre></div>
 </p>
