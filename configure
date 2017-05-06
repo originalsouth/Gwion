@@ -1,0 +1,696 @@
+#!/bin/bash
+
+die()
+{
+	local _ret=$2
+	test -n "$_ret" || _ret=1
+	test "$_PRINT_HELP" = yes && print_help >&2
+	echo "$1" >&2
+	exit ${_ret}
+}
+
+begins_with_short_option()
+{
+	local first_option all_short_options
+	all_short_options='h'
+	first_option="${1:0:1}"
+	test "$all_short_options" = "${all_short_options/$first_option/}" && return 1 || return 0
+}
+
+
+
+: "${PRG:="gwion"}"
+: "${_arg_prg:=$PRG}"
+: "${CC:="gcc"}"
+: "${_arg_cc:=$CC}"
+: "${YACC:="yacc"}"
+: "${_arg_yacc:=$YACC}"
+: "${LEX:="flex"}"
+: "${_arg_lex:=$LEX}"
+: "${PREFIX:="/usr/local"}"
+: "${_arg_prefix:=$PREFIX}"
+: "${SOUNDPIPE_LIB:="-lsoundpipe"}"
+: "${_arg_soundpipe_lib:=$SOUNDPIPE_LIB}"
+: "${SOUNDPIPE_INC:=}"
+: "${_arg_soundpipe_inc:=$SOUNDPIPE_INC}"
+: "${USE_DOUBLE:=off}"
+: "${_arg_double:=$USE_DOUBLE}"
+: "${USE_COVERAGE:=off}"
+: "${_arg_coverage:=$USE_COVERAGE}"
+: "${USE_MEMCHECK:=off}"
+: "${_arg_memcheck:=$USE_MEMCHECK}"
+: "${D_FUNC:=dummy}"
+: "${_arg_d_func:=$D_FUNC}"
+: "${DUMMY_D:=on}"
+: "${_arg_dummy:=$DUMMY_D}"
+: "${DUMMY_INC:=}"
+: "${_arg_dummy_inc:=$DUMMY_INC}"
+: "${DUMMY_LIB:=}"
+: "${_arg_dummy_lib:=$DUMMY_LIB}"
+: "${SPA_D:=on}"
+: "${_arg_spa:=$SPA_D}"
+: "${SPA_INC:=}"
+: "${_arg_spa_inc:=$SPA_INC}"
+: "${SPA_LIB:=}"
+: "${_arg_spa_lib:=$SPA_LIB}"
+: "${SNDFILE_D:=on}"
+: "${_arg_sndfile:=$SNDFILE_D}"
+: "${SNDFILE_INC:='/usr/include' '/usr/local/include'}"
+: "${_arg_sndfile_inc:=$SNDFILE_INC}"
+: "${SNDFILE_LIB:="-lsndfile"}"
+: "${_arg_sndfile_lib:=$SNDFILE_LIB}"
+: "${ALSA_D:=on}"
+: "${_arg_alsa:=$ALSA_D}"
+: "${ALSA_INC:=}"
+: "${_arg_alsa_inc:=$ALSA_INC}"
+: "${ALSA_LIB:="-lasound"}"
+: "${_arg_alsa_lib:=$ALSA_LIB}"
+: "${JACK_D:=off}"
+: "${_arg_jack:=$JACK_D}"
+: "${JACK_INC:=}"
+: "${_arg_jack_inc:=$JACK_INC}"
+: "${JACK_LIB:="-ljack"}"
+: "${_arg_jack_lib:=$JACK_LIB}"
+: "${PORTAUDIO_D:=off}"
+: "${_arg_portaudio:=$PORTAUDIO_D}"
+: "${PORTAUDIO_INC:=}"
+: "${_arg_portaudio_inc:=$PORTAUDIO_INC}"
+: "${PORTAUDIO_LIB:="-lportaudio"}"
+: "${_arg_portaudio_lib:=$PORTAUDIO_LIB}"
+: "${SOUNDIO_D:=off}"
+: "${_arg_soundio:=$SOUNDIO_D}"
+: "${SOUNDIO_INC:=}"
+: "${_arg_soundio_inc:=$SOUNDIO_INC}"
+: "${SOUNDIO_LIB:="-lsoundio"}"
+: "${_arg_soundio_lib:=$SOUNDIO_LIB}"
+: "${ADD_DIR:="add"}"
+: "${_arg_add:=$ADD_DIR}"
+: "${DEBUG_COMPILE:=off}"
+: "${_arg_debug_compile:=$DEBUG_COMPILE}"
+: "${DEBUG_OPERATOR:=off}"
+: "${_arg_debug_operator:=$DEBUG_OPERATOR}"
+: "${DEBUG_TYPE:=off}"
+: "${_arg_debug_type:=$DEBUG_TYPE}"
+: "${DEBUG_SCAN0:=off}"
+: "${_arg_debug_scan0:=$DEBUG_SCAN0}"
+: "${DEBUG_SCAN1:=off}"
+: "${_arg_debug_scan1:=$DEBUG_SCAN1}"
+: "${DEBUG_SCAN2:=off}"
+: "${_arg_debug_scan2:=$DEBUG_SCAN2}"
+: "${DEBUG_EMIT:=off}"
+: "${_arg_debug_emit:=$DEBUG_EMIT}"
+: "${DEBUG_VM:=off}"
+: "${_arg_debug_vm:=$DEBUG_VM}"
+: "${DEBUG_INSTR:=off}"
+: "${_arg_debug_instr:=$DEBUG_INSTR}"
+: "${DEBUG_SHREDULER:=off}"
+: "${_arg_debug_shreduler:=$DEBUG_SHREDULER}"
+: "${DEBUG_STACK:=off}"
+: "${_arg_debug_stack:=$DEBUG_STACK}"
+
+print_help ()
+{
+	echo "The general script's help msg"
+	printf 'Usage: %s [--prg <arg>] [--cc <arg>] [--yacc <arg>] [--lex <arg>] [--prefix <arg>] [--soundpipe_lib <arg>] [--soundpipe_inc <arg>] [--(no-)double] [--(no-)coverage] [--(no-)memcheck] [--d_func <arg>] [--(no-)dummy] [--dummy-inc <arg>] [--dummy-lib <arg>] [--(no-)spa] [--spa-inc <arg>] [--spa-lib <arg>] [--(no-)sndfile] [--sndfile-inc <arg>] [--sndfile-lib <arg>] [--(no-)alsa] [--alsa-inc <arg>] [--alsa-lib <arg>] [--(no-)jack] [--jack-inc <arg>] [--jack-lib <arg>] [--(no-)portaudio] [--portaudio-inc <arg>] [--portaudio-lib <arg>] [--(no-)soundio] [--soundio-inc <arg>] [--soundio-lib <arg>] [--add <arg>] [--(no-)debug-compile] [--(no-)debug-operator] [--(no-)debug-type] [--(no-)debug-scan0] [--(no-)debug-scan1] [--(no-)debug-scan2] [--(no-)debug-emit] [--(no-)debug-vm] [--(no-)debug-instr] [--(no-)debug-shreduler] [--(no-)debug-stack] [-h|--help]\n' "$0"
+	printf "\t%s\n" "--prg: value for PRG (default: 'gwion')"
+	printf "\t%s\n" "--cc: value for CC (default: 'gcc')"
+	printf "\t%s\n" "--yacc: value for YACC (default: 'yacc')"
+	printf "\t%s\n" "--lex: value for LEX (default: 'flex')"
+	printf "\t%s\n" "--prefix: value for PREFIX (default: '/usr/local')"
+	printf "\t%s\n" "--soundpipe_lib: value for SOUNDPIPE_LIB (default: '-lsoundpipe')"
+	printf "\t%s\n" "--soundpipe_inc: value for SOUNDPIPE_INC (no default)"
+	printf "\t%s\n" "--double,--no-double: debug double (off by default)"
+	printf "\t%s\n" "--coverage,--no-coverage: debug coverage (off by default)"
+	printf "\t%s\n" "--memcheck,--no-memcheck: debug memcheck (off by default)"
+	printf "\t%s\n" "--d_func: debug d_func (default: 'dummy')"
+	printf "\t%s\n" "--dummy,--no-dummy: enable dummy (on by default)"
+	printf "\t%s\n" "--dummy-inc: Directories where to look for include files for dummy (empty by default)"
+	printf "\t%s\n" "--dummy-lib: dummy library (no default)"
+	printf "\t%s\n" "--spa,--no-spa: enable spa (on by default)"
+	printf "\t%s\n" "--spa-inc: Directories where to look for include files for spa (empty by default)"
+	printf "\t%s\n" "--spa-lib: spa library (no default)"
+	printf "\t%s\n" "--sndfile,--no-sndfile: enable sndfile (on by default)"
+	printf "\t%s\n" "--sndfile-inc: Directories where to look for include files for sndfile (default array: ('/usr/include' '/usr/local/include') )"
+	printf "\t%s\n" "--sndfile-lib: sndfile library (default: '-lsndfile')"
+	printf "\t%s\n" "--alsa,--no-alsa: enable alsa (on by default)"
+	printf "\t%s\n" "--alsa-inc: Directories where to look for include files for alsa (empty by default)"
+	printf "\t%s\n" "--alsa-lib: alsa library (default: '-lasound')"
+	printf "\t%s\n" "--jack,--no-jack: enable jack (off by default)"
+	printf "\t%s\n" "--jack-inc: Directories where to look for include files for jack (empty by default)"
+	printf "\t%s\n" "--jack-lib: jack library (default: '-ljack')"
+	printf "\t%s\n" "--portaudio,--no-portaudio: enable portaudio (off by default)"
+	printf "\t%s\n" "--portaudio-inc: Directories where to look for include files for portaudio (empty by default)"
+	printf "\t%s\n" "--portaudio-lib: portaudio library (default: '-lportaudio')"
+	printf "\t%s\n" "--soundio,--no-soundio: enable soundio (off by default)"
+	printf "\t%s\n" "--soundio-inc: Directories where to look for include files for soundio (empty by default)"
+	printf "\t%s\n" "--soundio-lib: soundio library (default: '-lsoundio')"
+	printf "\t%s\n" "--add: add path (default: 'add')"
+	printf "\t%s\n" "--debug-compile,--no-debug-compile: debug compile (off by default)"
+	printf "\t%s\n" "--debug-operator,--no-debug-operator: debug operator (off by default)"
+	printf "\t%s\n" "--debug-type,--no-debug-type: debug type (off by default)"
+	printf "\t%s\n" "--debug-scan0,--no-debug-scan0: debug scan0 (off by default)"
+	printf "\t%s\n" "--debug-scan1,--no-debug-scan1: debug scan1 (off by default)"
+	printf "\t%s\n" "--debug-scan2,--no-debug-scan2: debug scan2 (off by default)"
+	printf "\t%s\n" "--debug-emit,--no-debug-emit: debug emit (off by default)"
+	printf "\t%s\n" "--debug-vm,--no-debug-vm: debug vm (off by default)"
+	printf "\t%s\n" "--debug-instr,--no-debug-instr: debug instr (off by default)"
+	printf "\t%s\n" "--debug-shreduler,--no-debug-shreduler: debug shreduler (off by default)"
+	printf "\t%s\n" "--debug-stack,--no-debug-stack: debug stack (off by default)"
+	printf "\t%s\n" "-h,--help: Prints help"
+}
+
+while test $# -gt 0
+do
+	_key="$1"
+	case "$_key" in
+		--prg|--prg=*)
+			_val="${_key##--prg=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_prg="$_val"
+			;;
+		--cc|--cc=*)
+			_val="${_key##--cc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_cc="$_val"
+			;;
+		--yacc|--yacc=*)
+			_val="${_key##--yacc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_yacc="$_val"
+			;;
+		--lex|--lex=*)
+			_val="${_key##--lex=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_lex="$_val"
+			;;
+		--prefix|--prefix=*)
+			_val="${_key##--prefix=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_prefix="$_val"
+			;;
+		--soundpipe_lib|--soundpipe_lib=*)
+			_val="${_key##--soundpipe_lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_soundpipe_lib="$_val"
+			;;
+		--soundpipe_inc|--soundpipe_inc=*)
+			_val="${_key##--soundpipe_inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_soundpipe_inc="$_val"
+			;;
+		--no-double|--double)
+			_arg_double="on"
+			test "${1:0:5}" = "--no-" && _arg_double="off"
+			;;
+		--no-coverage|--coverage)
+			_arg_coverage="on"
+			test "${1:0:5}" = "--no-" && _arg_coverage="off"
+			;;
+		--no-memcheck|--memcheck)
+			_arg_memcheck="on"
+			test "${1:0:5}" = "--no-" && _arg_memcheck="off"
+			;;
+		--d_func|--d_func=*)
+			_val="${_key##--d_func=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_d_func="$_val"
+			;;
+		--no-dummy|--dummy)
+			_arg_dummy="on"
+			test "${1:0:5}" = "--no-" && _arg_dummy="off"
+			;;
+		--dummy-inc|--dummy-inc=*)
+			_val="${_key##--dummy-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_dummy_inc+=("$_val")
+			;;
+		--dummy-lib|--dummy-lib=*)
+			_val="${_key##--dummy-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_dummy_lib="$_val"
+			;;
+		--no-spa|--spa)
+			_arg_spa="on"
+			test "${1:0:5}" = "--no-" && _arg_spa="off"
+			;;
+		--spa-inc|--spa-inc=*)
+			_val="${_key##--spa-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_spa_inc+=("$_val")
+			;;
+		--spa-lib|--spa-lib=*)
+			_val="${_key##--spa-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_spa_lib="$_val"
+			;;
+		--no-sndfile|--sndfile)
+			_arg_sndfile="on"
+			test "${1:0:5}" = "--no-" && _arg_sndfile="off"
+			;;
+		--sndfile-inc|--sndfile-inc=*)
+			_val="${_key##--sndfile-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_sndfile_inc+=("$_val")
+			;;
+		--sndfile-lib|--sndfile-lib=*)
+			_val="${_key##--sndfile-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_sndfile_lib="$_val"
+			;;
+		--no-alsa|--alsa)
+			_arg_alsa="on"
+			test "${1:0:5}" = "--no-" && _arg_alsa="off"
+			;;
+		--alsa-inc|--alsa-inc=*)
+			_val="${_key##--alsa-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_alsa_inc+=("$_val")
+			;;
+		--alsa-lib|--alsa-lib=*)
+			_val="${_key##--alsa-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_alsa_lib="$_val"
+			;;
+		--no-jack|--jack)
+			_arg_jack="on"
+			test "${1:0:5}" = "--no-" && _arg_jack="off"
+			;;
+		--jack-inc|--jack-inc=*)
+			_val="${_key##--jack-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_jack_inc+=("$_val")
+			;;
+		--jack-lib|--jack-lib=*)
+			_val="${_key##--jack-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_jack_lib="$_val"
+			;;
+		--no-portaudio|--portaudio)
+			_arg_portaudio="on"
+			test "${1:0:5}" = "--no-" && _arg_portaudio="off"
+			;;
+		--portaudio-inc|--portaudio-inc=*)
+			_val="${_key##--portaudio-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_portaudio_inc+=("$_val")
+			;;
+		--portaudio-lib|--portaudio-lib=*)
+			_val="${_key##--portaudio-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_portaudio_lib="$_val"
+			;;
+		--no-soundio|--soundio)
+			_arg_soundio="on"
+			test "${1:0:5}" = "--no-" && _arg_soundio="off"
+			;;
+		--soundio-inc|--soundio-inc=*)
+			_val="${_key##--soundio-inc=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_soundio_inc+=("$_val")
+			;;
+		--soundio-lib|--soundio-lib=*)
+			_val="${_key##--soundio-lib=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_soundio_lib="$_val"
+			;;
+		--add|--add=*)
+			_val="${_key##--add=}"
+			if test "$_val" = "$_key"
+			then
+				test $# -lt 2 && die "Missing value for the optional argument '$_key'." 1
+				_val="$2"
+				shift
+			fi
+			_arg_add="$_val"
+			;;
+		--no-debug-compile|--debug-compile)
+			_arg_debug_compile="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_compile="off"
+			;;
+		--no-debug-operator|--debug-operator)
+			_arg_debug_operator="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_operator="off"
+			;;
+		--no-debug-type|--debug-type)
+			_arg_debug_type="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_type="off"
+			;;
+		--no-debug-scan0|--debug-scan0)
+			_arg_debug_scan0="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_scan0="off"
+			;;
+		--no-debug-scan1|--debug-scan1)
+			_arg_debug_scan1="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_scan1="off"
+			;;
+		--no-debug-scan2|--debug-scan2)
+			_arg_debug_scan2="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_scan2="off"
+			;;
+		--no-debug-emit|--debug-emit)
+			_arg_debug_emit="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_emit="off"
+			;;
+		--no-debug-vm|--debug-vm)
+			_arg_debug_vm="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_vm="off"
+			;;
+		--no-debug-instr|--debug-instr)
+			_arg_debug_instr="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_instr="off"
+			;;
+		--no-debug-shreduler|--debug-shreduler)
+			_arg_debug_shreduler="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_shreduler="off"
+			;;
+		--no-debug-stack|--debug-stack)
+			_arg_debug_stack="on"
+			test "${1:0:5}" = "--no-" && _arg_debug_stack="off"
+			;;
+		-h*|--help)
+			print_help
+			exit 0
+			;;
+		*)
+			_PRINT_HELP=yes die "FATAL ERROR: Got an unexpected argument '$1'" 1
+			;;
+	esac
+	shift
+done
+
+
+set -e
+
+[ -f Makefile  ] && rm Makefile
+to_upper(){
+	echo "$1" | tr '[:lower:]' '[:upper:]'
+}
+
+config_check() {
+
+VALID_DRIVER=" dummy spa sndfile alsa jack portaudio soundio"
+grep "$_arg_d_func" <<<  "$VALID_DRIVER" > /dev/null || { echo "invalid default driver";exit 1; }
+
+if [ "$_arg_double" = "on" ]; then _CFLAGS+=" -DUSE_DOUBLE -DSPFLOAT=double";fi
+if [ "$_arg_double" = "1"  ];then _CFLAGS+=" -DUSE_DOUBLE -DSPFLOAT=double";fi
+([ "$_arg_double" = "on" ] || [ "$_arg_double" = "1"  ]) || _CFLAGS+=" -DSPFLOAT=float"
+if [ "$USE_COVERAGE" = "1"  ]; then _CFLAGS+=" -ftest-coverage -fprofile-arcs --coverage";fi
+if [ "$USE_COVERAGE" = "on" ]; then _CFLAGS+=" -ftest-coverage -fprofile-arcs --coverage";fi
+if [ "$_arg_soundpipe_inc" ]; then _CFLAGS+=" $_arg_soundpipe_inc";fi
+cmd="$_arg_cc -Iinclude -DDEBUG $_CFLAGS util/generate_header.c core/err_msg.c -o util/generate_header"
+eval "$cmd" || (echo 'invalid compilation options'; exit 1;)
+./util/generate_header || exit 1
+}
+exec >> Makefile
+echo "# generated by ./configure"
+make_handle() {
+
+printf "\n# handle base options\n"
+for iter in prg cc yacc lex prefix soundpipe_lib soundpipe_inc
+do
+	echo "$(to_upper $iter) ?=$(eval echo \$_arg_$iter)"
+	done
+ printf "LDFLAGS += -lm -ldl -rdynamic -lpthread\nCFLAGS += -Iinclude -std=c99 -O3 -mfpmath=sse -mtune=native -fno-strict-aliasing -Wall -pedantic -D_GNU_SOURCE\n"
+
+printf "\n# handle boolean options\n"
+for iter in double coverage memcheck
+do
+	if [ "$iter" = "double" ]
+	then echo "USE_$(to_upper $iter) = $(eval echo \$_arg_$iter)"
+	else echo "USE_$(to_upper $iter) ?= $(eval echo \$_arg_$iter)"
+	fi
+done
+
+printf "\n# handle definitions\n"
+d_func=d_func
+for iter in $d_func
+
+do
+	echo "$(to_upper $iter) ?= $(eval echo \$_arg_${iter})_driver"
+done
+
+printf "\n# handle directories\n"
+add=add
+for iter in $add
+
+do
+	key=$(echo "$iter" | cut -d ':' -f 1)
+	val=$(echo "$iter" | cut -d ':' -f 2)
+	lib=$(echo "$iter" | cut -d ':' -f 4)
+	echo "GWION_$(to_upper "$key")_DIR ?= \${PREFIX}/lib/Gwion/${val}"
+done
+printf "\n# handle libraries\n"
+for iter in dummy spa sndfile alsa jack portaudio soundio
+do
+	echo "$(to_upper $iter)_D ?= $(eval echo \$_arg_$iter)"
+done
+
+printf "\n# handle debug\n"
+for iter in compile:off operator:off type:off scan0:off scan1:off scan2:off emit:off vm:off instr:off shreduler:off stack:off
+do
+	key=$(echo "$iter" | cut -d ':' -f 1)
+	val=$(echo "$iter" | cut -d ':' -f 2)
+	lib=$(echo "$iter" | cut -d ':' -f 4)
+	echo "DEBUG_$(to_upper "$key") ?= $(eval echo "\$_arg_debug_$key")"
+done
+
+printf "\n# initialize source lists\n"
+for iter in core lang ugen eval
+do
+	echo "${iter}_src := \$(wildcard ${iter}/*.c)"
+done
+echo "drvr_src := drvr/driver.c"
+}
+make_add() {
+
+printf "\n# add libraries\n"
+for iter in dummy:on:: spa:on:: sndfile:on:'/usr/include','/usr/local/include':-lsndfile alsa:on::-lasound jack:off::-ljack portaudio:off::-lportaudio soundio:off::-lsoundio
+do
+	key=$(echo "$iter" | cut -d ':' -f 1)
+	val=$(echo "$iter" | cut -d ':' -f 2)
+	lib=$(echo "$iter" | cut -d ':' -f 4)
+	if [ "${val}" = "on" ]
+	then val=1
+	else val=0
+	fi
+  [ -z "$lib" ] && printf "ifeq (\${%s_D}, on)\\nCFLAGS += -DHAVE_%s\\ndrvr_src += drvr/%s.c\\nelse ifeq (\${%s_D}, 1)\\nCFLAGS +=-DHAVE_%s\\ndrvr_src +=drvr/%s.c\\nendif\\n"     "$(to_upper "$key")" "$(to_upper "$key")" "$key" "$(to_upper "$key")" "$(to_upper "$key")" "${key}"
+  [ -z "$lib" ] || printf "ifeq (\${%s_D}, on)\\nLDFLAGS += %s\\nCFLAGS += -DHAVE_%s\\ndrvr_src += drvr/%s.c\\nelse ifeq (\${%s_D}, 1)\\nLDFLAGS += %s\\nCFLAGS +=-DHAVE_%s\\ndrvr_src +=drvr/%s.c\\nendif\\n"     "$(to_upper "$key")" "${lib}" "$(to_upper "$key")" "${key}" "$(to_upper "$key")" "${lib}" "$(to_upper "$key")" "${key}"
+    done
+
+printf "\n# add boolean\n"
+for iter in double:off coverage:off memcheck:off
+do
+	key=$(echo "$iter" | cut -d ':' -f 1)
+	val=$(echo "$iter" | cut -d ':' -f 2)
+	lib=$(echo "$iter" | cut -d ':' -f 4)
+	    if [ "${val}" = "on" ]
+    then [ "$key" = "double" ] && val=double;
+    else [ "$key" = "double" ] && val=float;
+    fi
+    [ "$key" = "memcheck" ] && printf "ifeq (\${USE_%s}, on)\\nCFLAGS += -g\\nelse " "$(to_upper "$key")"
+    [ "$key" = "memcheck" ] && printf "ifeq (\${USE_%s}, 1)\\nCFLAGS += -g\\nendif\n" "$(to_upper "$key")"
+    [ "$key" = "coverage" ] && printf "ifeq (\${USE_%s}, on)\\nCFLAGS += -ftest-coverage -fprofile-arcs\\nelse " "$(to_upper "$key")"
+    [ "$key" = "coverage" ] && printf "ifeq (\${USE_%s}, 1)\\nCFLAGS += -ftest-coverage -fprofile-arcs\\nendif\n" "$(to_upper "$key")"
+    [ "$key" = "coverage" ] && printf "ifeq (\${USE_%s}, on)\\nLDFLAGS += --coverage\nelse " "$(to_upper "$key")"
+    [ "$key" = "coverage" ] && printf "ifeq (\${USE_%s}, 1)\\nLDFLAGS += --coverage\nendif\n" "$(to_upper "$key")"
+  done
+  key="double"
+  printf "ifeq (\${USE_%s}, on)\\nCFLAGS += -DUSE_%s} -DSPFLOAT=double\\nelse ifeq (\${USE_%s}, 1)\\nCFLAGS +=-DUSE_%s -DSPFLOAT=double\\nelse\\nCFLAGS+=-DSPFLOAT=float\\nendif\\n" "$(to_upper $key)" "$(to_upper $key)" "$(to_upper $key)" "$(to_upper $key)"
+
+printf "\n# add definitions\n"
+d_func=d_func
+for iter in $d_func
+
+do
+	key=$(echo "$iter" | cut -d ':' -f 1)
+	val=$(echo "$iter" | cut -d ':' -f 2)
+	lib=$(echo "$iter" | cut -d ':' -f 4)
+	echo "CFLAGS+= -D$(to_upper "$key")=\${$(to_upper "$key")}"
+done
+
+printf "\n# add directories\n"
+add=add
+for iter in $add
+
+do
+	printf "CFLAGS+=-DGWION_%s_DIR=\\\\\\\"\${GWION_%s_DIR}\\\\\\\"\n" "$(to_upper $iter)" "$(to_upper $iter)"
+done
+
+printf "\n# add debug flags\n"
+for iter in compile operator type scan0 scan1 scan2 emit vm instr shreduler stack
+do
+	printf "ifeq (\${DEBUG_%s}, on)\nCFLAGS += -DDEBUG_%s\nelse " "$(to_upper $iter)" "$(to_upper $iter)"
+	printf "ifeq (\${DEBUG_%s},  1)\nCFLAGS += -DDEBUG_%s\nendif\n" "$(to_upper "$key")" "$(to_upper "$key")"
+done
+
+printf "\n# add soundpipe\n"
+echo "LDFLAGS+=${SOUNDPIPE_LIB}"
+echo "CFLAGS+=${SOUNDPIPE_INC}"
+
+printf "\n# initialize object lists\n"
+for iter in core lang ugen eval drvr
+do
+	echo "${iter}_obj := \$(${iter}_src:.c=.o)"
+done
+}
+make_recipe() {
+  cat << EOF
+
+ifeq (\$(findstring DEBUG,\$(CFLAGS)), DEBUG)
+DEBUG = 1
+endif
+
+ifeq (\${DEBUG}, 1)
+CFLAGS+=-DDEBUG
+endif
+
+LDFLAGS+=-lsndfile
+
+ifeq (\$(shell uname), Linux)
+LDFLAGS+=-lrt
+endif
+
+all: \${core_obj} \${lang_obj} \${eval_obj} \${ugen_obj} \${drvr_obj}
+	\${CC} \${core_obj} \${lang_obj} \${eval_obj} \${ugen_obj} \${drvr_obj} \${LDFLAGS} -o \${PRG}
+
+clean:
+	@rm -f */*.o */*.gcda */*.gcno ${PRG}
+
+.c.o:
+	\${CC} \${CFLAGS} -c \$< -o \$(<:.c=.o)
+
+install: directories
+	cp \${PRG} \${PREFIX}
+
+uninstall:
+	rm \${PREFIX}/\${PRG}
+
+test:
+	@bash -c "source util/test.sh; do_test examples tests/error tests/tree tests/sh tests/ugen_coverage | consummer"
+
+parser:
+	\${YACC} -o eval/parser.c -dv eval/gwion.y -x
+
+lexer:
+	\${LEX}  -o eval/lexer.c eval/gwion.l
+
+directories:
+	mkdir -p \${PREFIX}
+	mkdir -p \${GWION_API_DIR} \${GWION_DOC_DIR} \${GWION_TAG_DIR} \${GWION_TOK_DIR} \${GWION_ADD_DIR}
+EOF
+
+}
+config_check
+make_handle
+make_add
+make_recipe
