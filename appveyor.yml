@@ -6,6 +6,7 @@ platform:
 install:
   - git clone https://github.com/PaulBatchelor/Soundpipe
   - cd Soundpipe
+  - ls
   - C:\cygwin\bin\bash -e -l -c "make"
   - cd ..
 
