@@ -7,6 +7,7 @@ install:
   - git clone https://github.com/PaulBatchelor/Soundpipe
   - cd Soundpipe
   - ls
+  - ls C:\cygwin\bin
   - C:\cygwin\bin\bash -e -l -c "make -f Makefile all"
   - cd ..
 
