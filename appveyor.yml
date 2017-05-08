@@ -1,7 +1,12 @@
+platform:
+ - x64
+ - Win32
+
+
 install:
   - git clone https://github.com/PaulBatchelor/Soundpipe
   - cd Soundpipe
-  - mingw32-make
+  - C:\cygwin\bin\bash -e -l -c "make"
   - cd ..
 
 build: ./configure; mingw32-make; make test	
