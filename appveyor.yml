@@ -1,7 +1,7 @@
 install:
   - git clone https://github.com/PaulBatchelor/Soundpipe
   - cd Soundpipe
-  - make
+  - mingw64-make.exe
   - cd ..
 
 build: ./configure; make; make test	
