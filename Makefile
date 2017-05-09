@@ -218,7 +218,7 @@ ifeq (${DEBUG}, 1)
 CFLAGS+=-DDEBUG
 endif
 
-LDFLAGS+=-lsndfile
+LDFLAGS+= ${SOUNDPIPE_LIB}
 
 ifeq ($(shell uname), Linux)
 LDFLAGS+=-lrt
