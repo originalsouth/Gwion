@@ -38,6 +38,9 @@ install:
   - chmod +x configure
 #  - C:\cygwin\bin\bash "C:\projects\gwion\configure"
   - C:\cygwin\bin\make
+  - echo EXPORTS > gwion.def
+  - nm gwion | grep ' T _' | sed 's/.* T _//' >> gwion.def
+  - cat gwion.def
   - C:\cygwin\bin\make test	
 
 build: false
