@@ -12,7 +12,7 @@ GWION_ADD_DIR ?= ${PREFIX}/lib/Gwion/add
 ifeq ($(shell uname), Darwin)
 LDFLAGS += -bundle -undefined dynamic_lookup
 else
-LDFLAGS += -shared
+LDFLAGS += -shared -no-undefined
 endif
 
 default: ${NAME}.so
