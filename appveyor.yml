@@ -18,7 +18,7 @@ install:
 #  - C:\cygwin\bin\bash -c "export CC=C:\cygwin\bin\gcc"
 #  - cp -pv C:\cygwin\bin\gcc C:\cygwin\bin\cc
   - C:\cygwin\bin\make
-  - cd ..
+  - cd C:\projects\gwion
   - bash "./configure";
   - make;
   - make test	
