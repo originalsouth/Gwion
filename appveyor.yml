@@ -8,7 +8,7 @@ install:
   - curl -fsS -o libsndfile-1.0.28.tar.gz http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz
   - tar -xvf libsndfile-1.0.28.tar.gz
   - cd libsndfile-1.0.28
-  - ./configure
+  - C:\cygwin\bin\bash "./configure"
   - C:\cygwin\bin\make
   - C:\cygwin\bin\make install
   - git clone https://github.com/PaulBatchelor/Soundpipe
