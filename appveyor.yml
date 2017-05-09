@@ -20,7 +20,7 @@ install:
   - C:\cygwin\bin\make
   - cd C:\projects\gwion
   - ls
-  - bash "./configure";
+  - bash -c "configure";
   - make;
   - make test	
 
