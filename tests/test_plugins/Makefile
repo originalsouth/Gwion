@@ -42,3 +42,4 @@ else ifeq ($(shell uname), Darwin)
 	rm ${GWION_ADD_DIR}/${NAME}.so
 else
 	rm ${GWION_ADD_DIR}\${NAME}.so
+endif
