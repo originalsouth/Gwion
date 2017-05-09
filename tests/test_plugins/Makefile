@@ -9,10 +9,10 @@ LDFLAGS  = -fPIC --coverage
 PREFIX ?= /usr
 GWION_ADD_DIR ?= ${PREFIX}/lib/Gwion/add
 # os specific
-ifeq ($(shell uname), Linux)
-LDFLAGS += -shared
-else
+ifeq ($(shell uname), Darwin)
 LDFLAGS += -bundle -undefined dynamic_lookup
+else
+LDFLAGS += -shared
 endif
 
 default: ${NAME}.so
@@ -36,4 +36,9 @@ install: ${NAME}.so
 	install ${NAME}.so ${GWION_ADD_DIR}
 
 uninstall:
+ifeq ($(shell uname), Darwin)
 	rm ${GWION_ADD_DIR}/${NAME}.so
+else ifeq ($(shell uname), Darwin)
+	rm ${GWION_ADD_DIR}/${NAME}.so
+else
+	rm ${GWION_ADD_DIR}\${NAME}.so
