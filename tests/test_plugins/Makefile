@@ -12,7 +12,7 @@ GWION_ADD_DIR ?= ${PREFIX}/lib/Gwion/add
 ifeq ($(shell uname), Darwin)
 LDFLAGS += -bundle -undefined dynamic_lookup
 else
-LDFLAGS += -shared --unresolved-symbols=ignore-all
+LDFLAGS += -shared
 endif
 
 default: ${NAME}.so
@@ -22,7 +22,7 @@ ${NAME}.so: ${OBJ}
 ifeq (${USE_LD}, 1)
 	${LD} $^ -o ${NAME}.so ${LDFLAGS}
 else
-	${CC} $^ -o ${NAME}.so ${LDFLAGS}
+	${CC} $^ -o ${NAME}.so ${LDFLAGS} ..\..\gwion.def
 endif
 
 
@@ -38,7 +38,7 @@ install: ${NAME}.so
 uninstall:
 ifeq ($(shell uname), Darwin)
 	rm ${GWION_ADD_DIR}/${NAME}.so
-else ifeq ($(shell uname), Darwin)
+else ifeq ($(shell uname), Linux)
 	rm ${GWION_ADD_DIR}/${NAME}.so
 else
 	rm ${GWION_ADD_DIR}\${NAME}.so
