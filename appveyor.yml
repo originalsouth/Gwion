@@ -6,7 +6,7 @@ platform:
 install:
   - SET "PATH=C:\cygwin\bin\;%PATH%"
   - SET "SOUNDPIPE_LIB=Soundpipe\libsoundpipe.a"
-  - SET "SOUNDPIPE_INC=Soundpipe\h"
+  - SET "SOUNDPIPE_INC=Soundpipe/h"
   - git clone https://github.com/ronen/sndfile.git
   - curl -fsS -o libsndfile-1.0.28.tar.gz http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz
   - tar -xvf libsndfile-1.0.28.tar.gz
