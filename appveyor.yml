@@ -41,7 +41,7 @@ install:
   - echo EXPORTS > gwion.def
   - nm gwion | grep ' T _' | sed 's/.* T _//' >> gwion.def
   - cat gwion.def
-  - C:\cygwin\bin\make test	
+#  - C:\cygwin\bin\make test	
 
 build: false
 
