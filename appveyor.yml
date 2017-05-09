@@ -9,6 +9,10 @@ environment:
 install:
   - SET "PATH=C:\cygwin\bin\;%PATH%"
   - uname
+  - git clone https://github.com/kata198/cygwin-ps-misc.git
+  - cd cygwin-ps-misc
+  - install.sh
+  - cd C:\projects\Gwion
 #  - SET "SOUNDPIPE_LIB=libsoundpipe.a"
 #  - bash "export SOUNDPIPE_LIB=libsoundpipe.a"
 #  - SET "SOUNDPIPE_INC=."
