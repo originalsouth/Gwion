@@ -6,7 +6,7 @@ CC ?=gcc
 YACC ?=yacc
 LEX ?=flex
 PREFIX ?=/usr
-SOUNDPIPE_LIB ?=-lsoundpipe
+SOUNDPIPE_LIB ?=C:\projects\Soundpipe\libsoundpipe.a
 SOUNDPIPE_INC ?=
 LDFLAGS += -lm -ldl -rdynamic -lpthread
 CFLAGS += -Iinclude -std=c99 -O3 -mfpmath=sse -mtune=native -fno-strict-aliasing -Wall -pedantic -D_GNU_SOURCE
