@@ -38,6 +38,7 @@ install:
   - chmod +x configure
 #  - C:\cygwin\bin\bash "C:\projects\gwion\configure"
   - C:\cygwin\bin\make
+  - ls *.dll
   - C:\cygwin\bin\make test	
 
 build: false
