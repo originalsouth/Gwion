@@ -2,13 +2,16 @@ platform:
  - x64
  - Win32
 
+environment:
+  - SOUNDPIPE_LIB=libsoundpipe.a
+  - SOUNDPIPE_INC=.
 
 install:
   - SET "PATH=C:\cygwin\bin\;%PATH%"
-  - SET "SOUNDPIPE_LIB=libsoundpipe.a"
-  - bash "export SOUNDPIPE_LIB=libsoundpipe.a"
-  - SET "SOUNDPIPE_INC=."
-  - git clone https://github.com/ronen/sndfile.git
+#  - SET "SOUNDPIPE_LIB=libsoundpipe.a"
+#  - bash "export SOUNDPIPE_LIB=libsoundpipe.a"
+#  - SET "SOUNDPIPE_INC=."
+#  - git clone https://github.com/ronen/sndfile.git
   - curl -fsS -o libsndfile-1.0.28.tar.gz http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz
   - tar -xvf libsndfile-1.0.28.tar.gz
   - cd libsndfile-1.0.28
