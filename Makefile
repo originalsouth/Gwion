@@ -200,7 +200,7 @@ CFLAGS += -DDEBUG_D_FUNC
 endif
 
 # add soundpipe
-LDFLAGS+=-lsoundpipe
+#LDFLAGS+=-lsoundpipe
 CFLAGS+=
 
 # initialize object lists
