@@ -3,8 +3,8 @@ platform:
  - Win32
 
 environment:
-  SOUNDPIPE_LIB:"C:\projects\Soundpipe\libsoundpipe.a"
-  SOUNDPIPE_INC:"C:\projects\Soundpipe"
+  SOUNDPIPE_LIB: C:\projects\Soundpipe\libsoundpipe.a
+  SOUNDPIPE_INC: C:\projects\Soundpipe
 
 install:
   - SET "PATH=C:\cygwin\bin\;%PATH%"
