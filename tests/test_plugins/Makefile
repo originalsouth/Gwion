@@ -5,14 +5,14 @@ SRC = ${NAME}.c
 OBJ = $(SRC:.c=.o)
 CFLAGS   = -I${INC} -ftest-coverage -fprofile-arcs
 
-LDFLAGS  = -fPIC --coverage
+#LDFLAGS  = -fPIC --coverage
 PREFIX ?= /usr
 GWION_ADD_DIR ?= ${PREFIX}/lib/Gwion/add
 # os specific
 ifeq ($(shell uname), Darwin)
 LDFLAGS += -bundle -undefined dynamic_lookup
 else
-LDFLAGS += -shared -no-undefined
+LDFLAGS += -shared
 endif
 
 default: ${NAME}.so
