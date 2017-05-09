@@ -19,7 +19,7 @@ default: ${NAME}.so
 
 
 ${NAME}.so: ${OBJ}
-"ifeq (${USE_LD}, 1)
+#ifeq (${USE_LD}, 1)
 	${LD} $^ -o ${NAME}.so ${LDFLAGS} --auto-import
 #else
 #	${CC} $^ -o ${NAME}.so ${LDFLAGS} ..\..\gwion.def
