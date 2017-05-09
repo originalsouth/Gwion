@@ -19,7 +19,10 @@ install:
 #  - cp -pv C:\cygwin\bin\gcc C:\cygwin\bin\cc
   - C:\cygwin\bin\make
   - cd ..
+  - bash "./configure";
+  - make;
+  - make test	
 
-build: bash "./configure"; make; make test	
+build: false
 
 test_script: false
