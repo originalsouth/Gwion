@@ -13,8 +13,8 @@ CFLAGS += -Iinclude -std=c99 -O3 -mfpmath=sse -mtune=native -fno-strict-aliasing
 
 # handle boolean options
 USE_DOUBLE = off
-USE_COVERAGE ?= on
-USE_MEMCHECK ?= on
+USE_COVERAGE ?= off
+USE_MEMCHECK ?= off
 
 # handle definitions
 D_FUNC ?= dummy_driver
