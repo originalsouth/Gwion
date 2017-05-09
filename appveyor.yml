@@ -21,10 +21,7 @@ install:
 #  - cp -pv C:\cygwin\bin\gcc C:\cygwin\bin\cc
   - C:\cygwin\bin\make
   - C:\cygwin\bin\make install
-  - cp libsoundpipe.a C:\projects\gwion
-  - cp h\soundpipe.h C:\projects\gwion
   - cd C:\projects\gwion
-  - ls
   - chmod +x configure
   - bash -c "./configure";
   - make;
