@@ -8,6 +8,7 @@ environment:
 
 install:
   - SET "PATH=C:\cygwin\bin\;%PATH%"
+  - uname
 #  - SET "SOUNDPIPE_LIB=libsoundpipe.a"
 #  - bash "export SOUNDPIPE_LIB=libsoundpipe.a"
 #  - SET "SOUNDPIPE_INC=."
