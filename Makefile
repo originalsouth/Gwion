@@ -67,11 +67,11 @@ CFLAGS +=-DHAVE_SPA
 drvr_src +=drvr/spa.c
 endif
 ifeq (${SNDFILE_D}, on)
-LDFLAGS += -lsndfile
+LDFLAGS += libsndfile-1.0.28\src\.libs\libsndfile.a
 CFLAGS += -DHAVE_SNDFILE
 drvr_src += drvr/sndfile.c
 else ifeq (${SNDFILE_D}, 1)
-LDFLAGS += -lsndfile
+LDFLAGS += libsndfile-1.0.28\src\.libs\libsndfile.a
 CFLAGS +=-DHAVE_SNDFILE
 drvr_src +=drvr/sndfile.c
 endif
