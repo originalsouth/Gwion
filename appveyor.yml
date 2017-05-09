@@ -5,10 +5,12 @@ platform:
 environment:
   SOUNDPIPE_LIB: C:\projects\Soundpipe\libsoundpipe.a
   SOUNDPIPE_INC: C:\projects\Soundpipe
+  GWION_ADD_DIR: C:\projects\Gwion\add
 
 install:
   - SET "PATH=C:\cygwin\bin\;%PATH%"
   - uname
+  - mkdir add
   - git clone https://github.com/kata198/cygwin-ps-misc.git
   - cd cygwin-ps-misc
   - install.sh
